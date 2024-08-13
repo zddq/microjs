@@ -1,0 +1,22 @@
+{
+  "name": "@micro/mini-cookie",
+  "version": "0.0.1",
+  "description": "一个 Document.cookie 管理包, A Document.cookie Manager Lib",
+  "keywords": [
+    "mini-cookie",
+    "mini",
+    "cookie",
+    "micro",
+    "@micro",
+    "@micro/mini-cookie"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "DEVELOPER",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
