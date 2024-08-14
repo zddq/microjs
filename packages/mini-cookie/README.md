@@ -1,6 +1,6 @@
 # mini-cookie
 
-一个 Document.cookie 管理包 - A Document.cookie Manager Lib
+mini-cookie 是一个轻量级的 JavaScript 库，旨在简化对浏览器 document.cookie 的操作。它提供了一组简单易用的 API，允许开发者轻松地读取、设置和删除 cookie，而无需直接处理复杂的字符串操作。
 
 - 😄 无依赖包 - No Dependency
 - 🤡 支持广泛浏览器 - Support Extensive Browser
