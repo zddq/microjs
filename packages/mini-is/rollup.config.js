@@ -1,8 +1,8 @@
 import del from "rollup-plugin-delete";
-import commonjs from "@rollup/plugin-commonjs";
-import json from "@rollup/plugin-json";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
+import commonjs from "@rollup/plugin-commonjs";
+import json from "@rollup/plugin-json";
 import { babel } from "@rollup/plugin-babel";
 import terser from "@rollup/plugin-terser";
 
@@ -14,12 +14,12 @@ export default {
   output: [
     { format: "esm", file: "dist/index.esm.js" },
     { format: "cjs", file: "dist/index.cjs.js" },
-    { format: "umd", file: "dist/index.umd.js", name: "MiniCookie" },
+    { format: "umd", file: "dist/index.umd.js", name: "MiniIs" },
   ],
   plugins: [
     del({ targets: ["dist/*"] }),
-    typescript(),
     nodeResolve(),
+    typescript(),
     commonjs(),
     json(),
     babel({

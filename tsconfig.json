@@ -5,16 +5,28 @@
     "target": "ES5",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
 
-    "strict": true,
-    "allowJs": true,
-    "skipLibCheck": true,
-
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
 
-    "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+
+    // Type Checking
+    "strict": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "alwaysStrict": false,
+    "allowUnreachableCode": false,
+
+    "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true
   }
 }

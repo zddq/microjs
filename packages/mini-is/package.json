@@ -1,10 +1,10 @@
 {
   "name": "mini-is",
-  "version": "1.0.4",
-  "description": "一个 Document.cookie 管理包, A Document.cookie Manager Lib",
+  "version": "0.0.1",
+  "description": "小而美的 JS 类型判断方法库 - Small and Beautiful JS Type Judgment Method Library",
   "type": "module",
-  "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
+  "main": "dist/index.cjs.js",
   "browser": "dist/index.umd.js",
   "unpkg": "dist/index.umd.js",
   "types": "types/index.d.ts",
@@ -17,7 +17,8 @@
     }
   },
   "scripts": {
-    "build": "rollup -c rollup.config.js"
+    "build": "rollup -c rollup.config.js",
+    "test": "jest --coverage"
   },
   "dependencies": {},
   "devDependencies": {},
@@ -25,7 +26,6 @@
     "dist",
     "types"
   ],
-  "license": "MIT",
   "homepage": "https://github.com/zddq/microjs/tree/main/packages/mini-is/#README",
   "bugs": {
     "url": "https://github.com/zddq/microjs/issues",
@@ -36,15 +36,20 @@
     "url": "git+https://github.com/zddq/microjs.git",
     "directory": "packages/mini-is"
   },
+  "author": "microJs <microjs@yeah.net> (https://github.com/zddq/microjs/#README.md)",
+  "license": "MIT",
   "keywords": [
-    "@micro/mini-is",
-    "miniCookie",
-    "miniCookieLib",
     "mini-is",
     "mini",
-    "cookie",
-    "@micro",
-    "micro"
-  ],
-  "author": "microJs <microjs@yeah.net> (https://github.com/zddq/microjs/#README.md)"
+    "is",
+    "js-type-check",
+    "esm",
+    "cjs",
+    "umd",
+    "js",
+    "javascript",
+    "ts",
+    "typescript",
+    "microjs"
+  ]
 }
