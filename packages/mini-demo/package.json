@@ -3,8 +3,8 @@
   "type": "module",
   "name": "mini-demo",
   "version": "1.0.0",
-  "description": "micro 测试子包",
-  "main": "index.js",
+  "description": "mini-demo 为 micro 项目下的测试子包, 主要用途为测试 microjs 其它子包的功能",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
