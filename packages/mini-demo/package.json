@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "type": "module",
+  "name": "mini-demo",
+  "version": "1.0.0",
+  "description": "micro 测试子包",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@micro/mini-cookie": "workspace:*"
+  },
+  "keywords": [],
+  "author": "DEVELOPER",
+  "license": "MIT"
+}

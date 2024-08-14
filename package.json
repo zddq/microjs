@@ -1,22 +1,25 @@
 {
-	"name": "microjs",
-	"version": "1.0.0",
-	"description": "Microjs 是一个资源平台，它帮助开发者发现和利用那些小巧、高效的JavaScript工具，以简化Web开发流程并提升项目性能。",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"keywords": [],
-	"author": "DEVELOPER",
-	"license": "MIT",
-	"devDependencies": {
-		"@rollup/plugin-babel": "^6.0.4",
-		"@rollup/plugin-commonjs": "^26.0.1",
-		"@rollup/plugin-json": "^6.1.0",
-		"@rollup/plugin-node-resolve": "^15.2.3",
-		"@rollup/plugin-typescript": "^11.1.6",
-		"prettier": "^3.3.3",
-		"rollup": "^4.20.0",
-		"rollup-plugin-delete": "^2.0.0",
-		"typescript": "^5.5.4"
-	}
+  "name": "microjs",
+  "version": "1.0.0",
+  "description": "Microjs 是一个资源平台，它帮助开发者发现和利用那些小巧、高效的JavaScript工具，以简化Web开发流程并提升项目性能。",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "DEVELOPER",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-env": "^7.25.3",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "prettier": "^3.3.3",
+    "rollup": "^4.20.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.4"
+  }
 }

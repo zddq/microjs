@@ -10,13 +10,34 @@
     "@micro",
     "@micro/mini-cookie"
   ],
-  "main": "index.js",
+  "type": "module",
+  "main": "dist/index.esm.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.umd.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "types/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c rollup.config.js"
   },
-  "keywords": [],
-  "author": "DEVELOPER",
-  "license": "MIT",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "files": [
+    "dist",
+    "types"
+  ],
+  "homepage": "https://github.com/zddq/microjs/#README",
+  "bugs": {
+    "url": "https://github.com/zddq/microjs/issues",
+    "email": "minimalism_zddq@163.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zddq/microjs.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "ZDDQ",
+    "email": "minimalism_zddq@163.com",
+    "url": "https://github.com/zddq/microjs/#README"
+  }
 }
