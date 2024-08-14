@@ -81,7 +81,7 @@ console.log(MiniCookie.get('cookieName'))
 | maxAge | number | 最大存活时间,单位(s), MaxAge 优先级高于 Expires。 | 无 |
 | httpOnly | boolean | 是否阻止客户端脚本（如JavaScript）访问该Cookie, <br>**_只能在服务器端设置，不能在客户端设置。_** | false |
 | secure | boolean | 是否只允许 HTTPS 请求访问 | false |
-| sameSite | "Strict", "Lax", "None" | 允许的跨域请求。<br>Strict - 只允许同源的请求访问。 <br>Lax - 允许跨域的请求访问。 <br>None - Cookie会在所有请求中发送，但需要同时设置Secure属性 | 无 |
+| sameSite | "Strict", "Lax", "None" | 允许的跨域请求。<br>Strict - 只允许同源的请求访问。 <br>Lax - 允许跨域的请求访问。 <br>None - 会在所有请求中发送，但需要同时设置Secure属性 | 无 |
 | partitioned | boolean | 是否开启分区，默认为 false。 | 无 |
 | priority | "High", "Medium", "Low" | 保留优先级权重。<br> High - 最后被清除 <br> Medium - 中等 <br> Low - 低保留权重当Cookie达上限时会优先被清除 | "Medium" |
 
