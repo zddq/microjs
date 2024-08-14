@@ -8,7 +8,7 @@ import cookieSerialize from "./cookie-serialize";
  * @param {MiniCookie.IMiniCookieOpts} opts cookie配置
  * @returns boolean true | false
  */
-export default function <O extends MiniCookie.IMiniCookieObject, K extends keyof O, V extends O[K]>(key: K, val: V, opts: MiniCookie.IMiniCookieOpts = {}) {
+export default function <O extends MiniCookie.IMiniCookieData, K extends keyof O, V extends O[K]>(key: K, val: V, opts: MiniCookie.IMiniCookieOpts = {}) {
   if (typeof window !== "undefined" && opts.httpOnly) {
     throw new Error("Can not set a httpOnly cookie in the browser.");
   }

@@ -55,11 +55,18 @@ declare namespace MiniCookie {
      */
     partitioned?: boolean;
     /**
-     * Cookie指定优先级, 这有助于浏览器决定在存储空间有限时哪些Cookie应该被保留
+     * Cookie指定保留优先级权重, 这有助于浏览器决定在存储空间有限时哪些Cookie应该被保留
      * @description Cookie的优先级，可以是Low、Medium（默认）或High。设置优先级有助于浏览器决定在存储空间有限时哪些Cookie应该被保留或删除。
      * @default Medium
      */
     priority?: "Low" | "Medium" | "High";
+  }
+
+  /**
+   * mini-cookie 内部类型
+   */
+  interface IMiniCookieData {
+    [key: string]: any;
   }
 
   /**

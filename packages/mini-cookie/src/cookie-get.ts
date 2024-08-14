@@ -5,6 +5,6 @@ import cookieParse from "./cookie-parse";
  * @param {string} key cookie名称
  * @returns {O[K]} O[K]
  */
-export default function <O extends MiniCookie.IMiniCookieObject, K extends keyof O>(key: K): O[K] {
+export default function <O extends MiniCookie.IMiniCookieData, K extends keyof O>(key: K): O[K] {
   return cookieParse<O>(typeof window === "undefined" ? "" : document.cookie)[key];
 }

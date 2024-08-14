@@ -1,6 +1,6 @@
 {
   "name": "mini-cookie",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "一个 Document.cookie 管理包, A Document.cookie Manager Lib",
   "keywords": [
     "@micro/mini-cookie",
