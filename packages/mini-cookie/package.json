@@ -35,19 +35,16 @@
     "dist",
     "types"
   ],
-  "homepage": "https://github.com/zddq/microjs/#README",
+  "license": "MIT",
+  "homepage": "https://github.com/zddq/microjs/tree/main/packages/mini-cookie/#README",
   "bugs": {
     "url": "https://github.com/zddq/microjs/issues",
-    "email": "minimalism_zddq@163.com"
+    "email": "microjs@yeah.net"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zddq/microjs.git"
+    "url": "git+https://github.com/zddq/microjs.git",
+    "directory": "packages/mini-cookie"
   },
-  "license": "MIT",
-  "author": {
-    "name": "ZDDQ",
-    "email": "minimalism_zddq@163.com",
-    "url": "https://github.com/zddq/microjs/#README"
-  }
+  "author": "microJs <microjs@yeah.net> (https://github.com/zddq/microjs/#README.md)"
 }
