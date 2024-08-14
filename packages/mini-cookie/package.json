@@ -42,14 +42,14 @@
     "cookie",
     "mini-cookie",
     "cookie-management",
-    "micro",
-    "cookies",
     "esm",
     "cjs",
     "umd",
     "js",
     "javascript",
     "ts",
-    "typescript"
+    "typescript",
+    "cookies",
+    "micro"
   ]
 }
