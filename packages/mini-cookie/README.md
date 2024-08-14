@@ -7,7 +7,7 @@ mini-cookie 是一个轻量级的 JavaScript 库，旨在简化对浏览器 docu
 - ✅ 支持 ESModule - Support ESM
 - ✅ 支持 CommonJS - Support CJS
 - ✅ 支持 UMD - Support UMD
-- ✅ 本身支持 TS - Support TS
+- ✅ 本身内置 TS 类型提示, 无需下载额外 @types 类型提示包 TS - Support TS
 - 👉 可自定义 Cookie TS 类型提示(重写模块 ICookieData 类型定义即可) - Support Custom TS
 
 ## 安装方式 - Installation
