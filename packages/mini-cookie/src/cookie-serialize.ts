@@ -5,9 +5,9 @@ const RE_specialContent = /^[\u0009\u0020-\u007e\u0080-\u00ff]+$/;
  * cookie序列化
  * @param {string} name cookie名称
  * @param {*} val cookie值
- * @param {IMiniCookieOpts} opts 自定义配置
+ * @param {MiniCookie.IMiniCookieOpts} opts 自定义配置
  */
-export default function cookieSerialize(name: string, val: any, opts: IMiniCookieOpts = {}): string {
+export default function cookieSerialize(name: string, val: any, opts: MiniCookie.IMiniCookieOpts = {}): string {
   const opt = opts || {};
 
   if (!RE_specialContent.test(name)) {

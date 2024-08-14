@@ -3,7 +3,7 @@
  * @param {string} cookieStr cookie字符串
  * @return Cookie Object
  */
-export default function cookieParse<O extends IMiniCookieObject>(cookieStr: string): O {
+export default function cookieParse<O extends MiniCookie.IMiniCookieObject>(cookieStr: string): O {
   if (!cookieStr || typeof cookieStr !== "string") {
     return {} as O;
   }

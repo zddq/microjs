@@ -30,33 +30,33 @@ bun install mini-cookie
 
 ```js
 // ESM xxx.js
-import miniCookie from 'mini-cookie';
-miniCookie.set('cookieName', 'cookieValue')
-console.log(miniCookie.get('cookieName'))
+import MiniCookie from 'mini-cookie';
+MiniCookie.set('cookieName', 'cookieValue')
+console.log(MiniCookie.get('cookieName'))
 
 // CJS xxx.js
-const miniCookie = require('mini-cookie');
-miniCookie.set('cookieName', 'cookieValue')
-console.log(miniCookie.get('cookieName'))
+const MiniCookie = require('mini-cookie');
+MiniCookie.set('cookieName', 'cookieValue')
+console.log(MiniCookie.get('cookieName'))
 
-// UMD xxx.html 普通 script 直接导入 -> 访问全局变量 miniCookieLib
+// UMD xxx.html 普通 script 直接导入 -> 访问全局变量 MiniCookie
 <script src="https://unpkg.com/mini-cookie@0.0.1"></script>;
 <script>
-  console.log("miniCookieLib 包对象: ", miniCookieLib)
-  miniCookieLib.set('cookieName', 'cookieValue')
-  console.log(miniCookieLib.get('cookieName'))
-  console.log(miniCookieLib.has('cookieName'))
+  console.log("MiniCookie 包对象: ", MiniCookie)
+  MiniCookie.set('cookieName', 'cookieValue')
+  console.log(MiniCookie.get('cookieName'))
+  console.log(MiniCookie.has('cookieName'))
 </script>
 
 // script type module 模块化内部引入方式
 <script type="module">
-  import miniCookieLib from "https://unpkg.com/mini-cookie@0.0.1/dist/index.esm.js";
-  console.log("miniCookieLib 包对象: ", miniCookieLib)
-  miniCookieLib.set('cookieName', 'cookieValue')
-  console.log(miniCookieLib.get('cookieName'))
-  console.log(miniCookieLib.has('cookieName'))
-  console.log(miniCookieLib.del('cookieName'))
-  console.log(miniCookieLib.has('cookieName'))
+  import MiniCookie from "https://unpkg.com/mini-cookie@0.0.1/dist/index.esm.js";
+  console.log("MiniCookie 包对象: ", MiniCookie)
+  MiniCookie.set('cookieName', 'cookieValue')
+  console.log(MiniCookie.get('cookieName'))
+  console.log(MiniCookie.has('cookieName'))
+  console.log(MiniCookie.del('cookieName'))
+  console.log(MiniCookie.has('cookieName'))
 </script>
 ```
 

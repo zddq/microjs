@@ -1,3 +1,4 @@
 import miniCookie from "@micro/mini-cookie";
 
-console.log(miniCookie.set("name", "val"));
+miniCookie.set("name", "18");
+miniCookie.set("age", 18);

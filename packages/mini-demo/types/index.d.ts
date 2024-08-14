@@ -1,5 +1,5 @@
-declare module "@micro/mini-cookie" {
-  interface IMiniCookieObject {
+declare namespace MiniCookie {
+  interface ICookieData {
     name: string;
     age: number;
   }

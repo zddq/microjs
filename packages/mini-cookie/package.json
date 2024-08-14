@@ -1,21 +1,31 @@
 {
-  "name": "@micro/mini-cookie",
+  "name": "mini-cookie",
   "version": "0.0.1",
   "description": "一个 Document.cookie 管理包, A Document.cookie Manager Lib",
   "keywords": [
+    "@micro/mini-cookie",
+    "miniCookie",
+    "miniCookieLib",
     "mini-cookie",
     "mini",
     "cookie",
-    "micro",
     "@micro",
-    "@micro/mini-cookie"
+    "micro"
   ],
   "type": "module",
-  "main": "dist/index.esm.js",
+  "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
   "unpkg": "dist/index.umd.js",
   "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./types/index.d.mts",
+        "require": "./types/index.d.ts"
+      }
+    }
+  },
   "scripts": {
     "build": "rollup -c rollup.config.js"
   },

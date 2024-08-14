@@ -14,7 +14,7 @@ export default {
   output: [
     { format: "esm", file: "dist/index.esm.js" },
     { format: "cjs", file: "dist/index.cjs.js" },
-    { format: "umd", file: "dist/index.umd.js", name: "miniCookieLib" },
+    { format: "umd", file: "dist/index.umd.js", name: "MiniCookie" },
   ],
   plugins: [
     del({ targets: ["dist/*"] }),

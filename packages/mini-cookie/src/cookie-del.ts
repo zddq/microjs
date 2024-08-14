@@ -1,3 +1,4 @@
+import MiniCookie from "types";
 import cookieSet from "./cookie-set";
 
 /**
@@ -5,6 +6,6 @@ import cookieSet from "./cookie-set";
  * @param {string} key cookie名称
  * @return boolean
  */
-export default function <O extends IMiniCookieObject, K extends keyof O>(key: K) {
+export default function <O extends MiniCookie.IMiniCookieObject, K extends keyof O>(key: K) {
   return cookieSet(String(key), "", { maxAge: -1 });
 }
