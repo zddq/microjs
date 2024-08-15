@@ -1,17 +1,14 @@
 {
   "name": "mini-cookie",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "一个 Document.cookie 管理包 - A Document.cookie Manager Lib",
-  "type": "module",
-  "module": "dist/index.esm.js",
   "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
   "unpkg": "dist/index.umd.js",
   "types": "types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs.js",
       "types": {
         "import": "./types/index.d.mts",
         "require": "./types/index.d.ts"
