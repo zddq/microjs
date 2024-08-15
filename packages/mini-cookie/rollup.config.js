@@ -5,9 +5,11 @@ import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import { babel } from "@rollup/plugin-babel";
 import terser from "@rollup/plugin-terser";
-import { RollupOptions } from "rollup";
 
-const config: RollupOptions = {
+/**
+ * @type {import("rollup").RollupOptions}
+ */
+const config = {
   input: "src/index.ts",
   output: [
     { format: "esm", file: "dist/index.esm.js" },

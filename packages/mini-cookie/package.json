@@ -1,29 +1,18 @@
 {
   "name": "mini-cookie",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "一个 Document.cookie 管理包 - A Document.cookie Manager Lib",
+  "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
   "unpkg": "dist/index.umd.js",
   "types": "types/index.d.ts",
-  "exports": {
-    ".": {
-      "types": {
-        "import": "./types/index.d.mts",
-        "require": "./types/index.d.ts"
-      }
-    }
-  },
   "scripts": {
     "build": "rollup -c rollup.config.js"
   },
   "dependencies": {},
   "devDependencies": {},
-  "files": [
-    "dist",
-    "types"
-  ],
   "homepage": "https://github.com/zddq/microjs/tree/main/packages/mini-cookie/#README",
   "bugs": {
     "url": "https://github.com/zddq/microjs/issues",
@@ -36,6 +25,10 @@
   },
   "author": "microJs <microjs@yeah.net> (https://github.com/zddq/microjs/#README.md)",
   "license": "MIT",
+  "files": [
+    "dist",
+    "types"
+  ],
   "keywords": [
     "mini",
     "cookie",
