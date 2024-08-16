@@ -1,8 +1,7 @@
 {
   "name": "mini-cookie",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "一个 Document.cookie 管理包 - A Document.cookie Manager Lib",
-  "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
