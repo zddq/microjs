@@ -1,6 +1,6 @@
 # mini-cookie
 
-mini-cookie 是一个轻量级的 JavaScript 库，旨在简化对浏览器 document.cookie 的操作。它提供了一组简单易用的 API，允许开发者轻松地读取、设置和删除 cookie，而无需直接处理复杂的字符串操作。
+mini-cookie 是一个轻量级的 JavaScript 库，旨在简化对浏览器 Document.cookie 的操作。它提供了一组简单易用的 API，允许开发者轻松地读取、设置和删除 cookie，而无需直接处理复杂的字符串操作。
 
 - 😄 无依赖包 - No Dependency
 - 🤡 支持广泛浏览器 - Support Extensive Browser
@@ -40,7 +40,7 @@ MiniCookie.set('cookieName', 'cookieValue')
 console.log(MiniCookie.get('cookieName'))
 
 // UMD xxx.html 普通 script 直接导入 -> 访问全局变量 MiniCookie
-<script src="https://unpkg.com/mini-cookie@0.0.1"></script>;
+<script src="https://unpkg.com/mini-cookie@0.0.6"></script>;
 <script>
   console.log("MiniCookie 包对象: ", MiniCookie)
   MiniCookie.set('cookieName', 'cookieValue')
@@ -50,7 +50,7 @@ console.log(MiniCookie.get('cookieName'))
 
 // script type module 模块化内部引入方式
 <script type="module">
-  import MiniCookie from "https://unpkg.com/mini-cookie@0.0.1/dist/index.esm.js";
+  import MiniCookie from "https://unpkg.com/mini-cookie@0.0.6/dist/index.esm.js";
   console.log("MiniCookie 包对象: ", MiniCookie)
   MiniCookie.set('cookieName', 'cookieValue')
   console.log(MiniCookie.get('cookieName'))
@@ -75,14 +75,14 @@ console.log(MiniCookie.get('cookieName'))
 
 | 属性 | 类型 | 描述 | 默认值 |
 | --- | --- | --- | --- |
-| domain | string | 域名 | 默认为当前文档路径域部分 |
-| path | string | 路径 | 默认为当前文档位置的路径 |
-| expires | Date | 过期时间 (推荐) | 未设置则会在对话结束时过期 |
-| maxAge | number | 最大存活时间,单位(s), MaxAge 优先级高于 Expires。 | 无 |
+| domain | string | 域名 | 默认当前文档路径域部分 |
+| path | string | 路径 | 默认当前文档位置的路径 |
+| expires | Date | 过期时间 | 未设置则会在对话结束时过期 |
+| maxAge | number | 最大存活时间,单位(s), MaxAge 优先级高于 Expires。(推荐) | 空 |
 | httpOnly | boolean | 是否阻止客户端脚本（如JavaScript）访问该Cookie, <br>**_只能在服务器端设置，不能在客户端设置。_** | false |
 | secure | boolean | 是否只允许 HTTPS 请求访问 | false |
-| sameSite | "Strict", "Lax", "None" | 允许的跨域请求。<br>Strict - 只允许同源的请求访问。 <br>Lax - 允许跨域的请求访问。 <br>None - 会在所有请求中发送，但需要同时设置Secure属性 | 无 |
-| partitioned | boolean | 是否开启分区，默认为 false。 | 无 |
+| sameSite | "Strict", "Lax", "None" | 允许的跨域请求。<br>Strict - 只允许同源的请求访问。 <br>Lax - 允许跨域的请求访问。 <br>None - 会在所有请求中发送，但需要同时设置Secure属性 | 空 |
+| partitioned | boolean | 是否开启分区。 | false |
 | priority | "High", "Medium", "Low" | 保留优先级权重。<br> High - 最后被清除 <br> Medium - 中等 <br> Low - 低保留权重当Cookie达上限时会优先被清除 | "Medium" |
 
 ## 覆写 ICookieData 获得自定义 TS 类型提示(可选)
@@ -100,7 +100,7 @@ declare namespace MiniCookie {
 
 ```
 
-## blessing
+## Blessing
 
 🥰 献给所有追求简洁与规范代码的开发者，愿我们的代码如诗般优雅，逻辑清晰，易于维护。
 
