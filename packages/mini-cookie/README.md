@@ -78,12 +78,12 @@ console.log(MiniCookie.get('cookieName'))
 | domain | string | 域名 | 默认当前文档路径域部分 |
 | path | string | 路径 | 默认当前文档位置的路径 |
 | expires | Date | 过期时间 | 未设置则会在对话结束时过期 |
-| maxAge | number | 最大存活时间,单位(s), MaxAge 优先级高于 Expires。(推荐) | 空 |
+| maxAge | number | 最大存活时间,单位(s), <br/>>MaxAge 优先级高于 Expires。(推荐) | 空 |
 | httpOnly | boolean | 是否阻止客户端脚本（如JavaScript）访问该Cookie, <br>**_只能在服务器端设置，不能在客户端设置。_** | false |
 | secure | boolean | 是否只允许 HTTPS 请求访问 | false |
 | sameSite | "Strict", "Lax", "None" | 允许的跨域请求。<br>Strict - 只允许同源的请求访问。 <br>Lax - 允许跨域的请求访问。 <br>None - 会在所有请求中发送，但需要同时设置Secure属性 | 空 |
 | partitioned | boolean | 是否开启分区。 | false |
-| priority | "High", "Medium", "Low" | 保留优先级权重。<br> High - 最后被清除 <br> Medium - 中等 <br> Low - 低保留权重当Cookie达上限时会优先被清除 | "Medium" |
+| priority | "High", "Medium", "Low" | 浏览器保留优先级权重。<br> High - 高保留权重 <br> Medium - 中等保留权重 <br> Low - 低保留权重 <br> 当Cookie达存储上限时低保留权重会被优先清除 | "Medium" |
 
 ## 覆写 ICookieData 获得自定义 TS 类型提示(可选)
 
