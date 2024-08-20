@@ -1,7 +1,6 @@
 {
-  "type": "module",
+  "private": true,
   "name": "microjs",
-  "version": "1.0.0",
   "description": "Microjs 是一个资源平台，它帮助开发者发现和利用那些小巧、高效的JavaScript工具，以简化Web开发流程并提升项目性能。",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +9,9 @@
   "author": "DEVELOPER",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
+    "@babel/preset-typescript": "^7.24.7",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-json": "^6.1.0",
@@ -19,6 +20,7 @@
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/jest": "^29.5.12",
     "@types/node": "^22.3.0",
+    "babel-jest": "^29.7.0",
     "jest": "^29.7.0",
     "prettier": "^3.3.3",
     "rollup": "^4.20.0",

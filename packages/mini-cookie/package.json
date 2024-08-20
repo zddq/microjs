@@ -37,8 +37,8 @@
     "cjs",
     "umd",
     "js",
-    "javascript",
     "ts",
+    "javascript",
     "typescript",
     "cookies",
     "microjs"

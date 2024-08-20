@@ -1,8 +1,8 @@
 {
-  "extends": ["../../tsconfig.json"],
+  "extends": ["../../package.json"],
   "compilerOptions": {
     "rootDir": ".",
     "baseUrl": "."
   },
-  "include": ["src", "types", "jest.config.ts"]
+  "include": ["src", "types"]
 }

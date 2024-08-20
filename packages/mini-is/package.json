@@ -1,10 +1,10 @@
 {
   "name": "mini-is",
-  "version": "0.0.1",
+  "version": "1.0.5",
   "description": "小而美的 JS 类型判断方法库 - Small and Beautiful JS Type Judgment Method Library",
   "type": "module",
-  "module": "dist/index.esm.js",
   "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
   "unpkg": "dist/index.umd.js",
   "types": "types/index.d.ts",
@@ -39,8 +39,8 @@
     "cjs",
     "umd",
     "js",
-    "javascript",
     "ts",
+    "javascript",
     "typescript",
     "microjs"
   ]

@@ -1,12 +1,9 @@
 /**
- * For a detailed explanation regarding each configuration property, visit:
- * https://jestjs.io/docs/configuration
+ * @type {import("jest").Config}
  */
-
-import type { Config } from "jest";
-
-const config: Config = {
+export default {
   cache: true,
+  verbose: true,
   cacheDirectory: "/tmp/jest",
   testMatch: ["**/*.test.ts"],
 
@@ -27,5 +24,3 @@ const config: Config = {
     },
   },
 };
-
-export default config;
