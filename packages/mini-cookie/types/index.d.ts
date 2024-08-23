@@ -92,7 +92,7 @@ declare namespace MiniCookie {
     /**
      * 解析 cookie 字符串,获得对象
      */
-    parse(cookieStr: string): O;
+    parse<O>(cookieStr: string): O;
     /**
      * 序列化 cookie 对象为字符串
      */

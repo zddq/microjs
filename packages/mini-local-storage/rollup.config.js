@@ -9,12 +9,12 @@ import terser from "@rollup/plugin-terser";
 /**
  * @type {import("rollup").RollupOptions}
  */
-const config = {
+export default {
   input: "src/index.ts",
   output: [
     { format: "esm", file: "dist/index.esm.js" },
     { format: "cjs", file: "dist/index.cjs.js" },
-    { format: "umd", file: "dist/index.umd.js", name: "MiniLocalStorage" },
+    { format: "umd", file: "dist/index.umd.js", name: "MLS" },
   ],
   plugins: [
     del({ targets: ["dist/*"] }),
@@ -26,5 +26,3 @@ const config = {
     terser(),
   ],
 };
-
-export default config;

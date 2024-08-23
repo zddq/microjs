@@ -2,7 +2,9 @@
   "extends": ["../../package.json"],
   "compilerOptions": {
     "rootDir": ".",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
-  "include": ["src/**/*", "types"]
+  "include": ["src", "types", "test"]
 }

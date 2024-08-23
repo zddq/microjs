@@ -2,7 +2,6 @@
 
 mini-local-storage 是一个轻量级的 JavaScript 库，旨在简化对浏览器本地存储（localStorage）的操作。它提供了一组简单易用的 API，允许开发者轻松地读取、设置和删除本地存储中的数据项，而无需直接处理复杂的字符串操作和数据序列化/反序列化过程。
 
-- 😄 无依赖包 - No Dependency
 - 🤡 支持广泛浏览器 - Support Extensive Browser
 - ✅ 自动处理数据的序列化与反序列化 - Support Serialization
 - ✅ 支持数据过期机制 - Support Expire
@@ -30,14 +29,14 @@ bun install mini-local-storage
 
 ```js
 // ESM xxx.js
-import MiniCookie from 'mini-local-storage';
-MiniCookie.set('key', 'val')
-console.log(MiniCookie.get('key'))
+import MLS from 'mini-local-storage';
+MLS.set('key', 'val')
+console.log(MLS.get('key'))
 
 // CJS xxx.js
-const MiniCookie = require('mini-local-storage');
-MiniCookie.set('key', 'val')
-console.log(MiniCookie.get('key'))
+const MLS = require('mini-local-storage');
+MLS.set('key', 'val')
+console.log(MLS.get('key'))
 
 // UMD xxx.html 普通 script 直接导入 -> 访问全局变量 MiniLocalStorage
 <script src="https://unpkg.com/mini-local-storage@0.0.1"></script>;
@@ -64,6 +63,11 @@ console.log(MiniCookie.get('key'))
 
 | 方法名    | 描述                                 | 参数                                               | 返回值            |
 | --------- | ------------------------------------ | -------------------------------------------------- | ----------------- |
+| get | 获取指定 key 的值                           | get(key:string,config?:MiniLocalStorage.Config):any                                       | any               |
+| set | 设置指定 key 的 val 到浏览器本地存储| set(key:string,val:any,config?:MiniLocalStorage.Config):void                                       | void              |
+| has | 判断指定 key 是否存在                       | has(key:string,config?:MiniLocalStorage.Config):boolean                                       | boolean           |
+| del | 删除指定 key 的值                           | del(key:string,config?:MiniLocalStorage.Config):void                                       | void              |
+| create | 创建一个 MiniLocalStorage 实例               | create(config?:MiniLocalStorage.Config):MiniLocalStorage                                       | MiniLocalStorage  |
 
 ## IMiniLocalStorageOpts 类型参数
 

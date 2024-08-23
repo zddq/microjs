@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiniLocalStorage</title>
+  </head>
+  <body>
+    <!-- script UMD 引入方式 -->
+    <script src="../dist/index.umd.js"></script>
+    <script>
+      const mls = MLS.create({ prefix: "XX_DEV_680", isUseAes: true });
+      console.log(mls);
+      console.log(mls.set("key"));
+
+      // console.log(mls.set("key", { a: 1, b: "2", c: [1, 2, 3] }, { maxAge: 10 * 60 }));
+      console.log(mls.has("key"));
+      console.log(mls.get("key"));
+      // console.log(mls.del("key"));
+      // console.log(mls.has("key"));
+    </script>
+  </body>
+</html>
