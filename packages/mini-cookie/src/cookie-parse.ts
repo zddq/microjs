@@ -12,7 +12,13 @@ export default function cookieParse<O extends MiniCookie.IMiniCookieData>(cookie
     .split(";")
     .filter(Boolean)
     .map(kvStr => kvStr.split("="))
-    .reduce((tmpObj, [key, val = ""]) => ({ ...tmpObj, [key.trim()]: JSON.parse(tryDecode(val.trim())) }), {} as O);
+    .reduce((tmpObj, [key, val = ""]) => {
+      try {
+        return { ...tmpObj, [key.trim()]: JSON.parse(val.trim()) };
+      } catch (error) {
+        return { ...tmpObj, [key.trim()]: val.trim() };
+      }
+    }, {} as O);
 }
 
 function tryDecode(str: string) {
