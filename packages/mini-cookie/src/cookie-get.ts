@@ -8,8 +8,7 @@ import cookieParse from "./cookie-parse";
  */
 export default function <O extends MiniCookie.IMiniCookieData, K extends keyof O>(key: K, opts: MiniCookie.IMiniCookieOpts = {}): O[K] {
   try {
-    const isWindow = typeof window === "undefined";
-    if (isWindow) {
+    if (typeof window === "undefined") {
       return cookieParse<O>(document.cookie)[key];
     }
 
