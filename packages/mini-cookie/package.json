@@ -1,6 +1,6 @@
 {
   "name": "mini-cookie",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "description": "一个 Document.cookie 管理包 - A Document.cookie Manager Lib",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -32,6 +32,7 @@
   "keywords": [
     "mini",
     "cookie",
+    "mini cookie",
     "mini-cookie",
     "cookie-management",
     "esm",
