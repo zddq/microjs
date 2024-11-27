@@ -63,7 +63,7 @@ declare namespace MiniCookie {
      */
     priority?: "Low" | "Medium" | "High";
 
-    /** nextjs 服务端渲染上下文 */
+    /** SSR nextjs 服务端渲染上下文 */
     ctx?: GetServerSidePropsContext;
   }
 
@@ -81,7 +81,7 @@ declare namespace MiniCookie {
     /**
      * 获取 cookie
      */
-    get<K extends keyof ICookieData>(key: K): ICookieData[K];
+    get<K extends keyof ICookieData>(key: K, opts?: IMiniCookieOpts): ICookieData[K];
     /**
      * 设置 cookie
      */
@@ -89,11 +89,11 @@ declare namespace MiniCookie {
     /**
      * 判断 cookie 是否存在
      */
-    has<K extends keyof ICookieData>(key: K): boolean;
+    has<K extends keyof ICookieData>(key: K, opts?: IMiniCookieOpts): boolean;
     /**
      * 删除 cookie
      */
-    del<K extends keyof ICookieData>(key: K): boolean;
+    del<K extends keyof ICookieData>(key: K, opts?: IMiniCookieOpts): boolean;
     /**
      * 解析 cookie 字符串,获得对象
      */
