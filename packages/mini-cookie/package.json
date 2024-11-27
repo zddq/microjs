@@ -8,10 +8,11 @@
   "unpkg": "dist/index.umd.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "build": "rollup -c rollup.config.js"
+    "build": "rollup -c rollup.config.mjs"
   },
-  "dependencies": { },
-  "devDependencies": { },
+  "devDependencies": {
+    "next": "^15.0.3"
+  },
   "homepage": "https://github.com/zddq/microjs/tree/main/packages/mini-cookie/#README",
   "bugs": {
     "url": "https://github.com/zddq/microjs/issues",

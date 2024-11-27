@@ -1,3 +1,5 @@
+import type { GetServerSidePropsContext } from "next";
+
 declare namespace MiniCookie {
   /**
    * mini-cookie 设置可配置参数
@@ -60,6 +62,9 @@ declare namespace MiniCookie {
      * @default Medium
      */
     priority?: "Low" | "Medium" | "High";
+
+    /** nextjs 服务端渲染上下文 */
+    ctx?: GetServerSidePropsContext;
   }
 
   /**
