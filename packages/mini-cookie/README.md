@@ -8,6 +8,7 @@ mini-cookie 是一个轻量级的 JavaScript 库，旨在简化对浏览器 Docu
 - ✅ 支持 CommonJS - Support CJS
 - ✅ 支持 UMD - Support UMD
 - ✅ 本身内置 TS 类型提示, 无需下载额外 @types 类型提示包 TS - Support TS
+- ✅ >=0.0.8 支持 SSR Nextjs cookie - Support SSR Nextjs cookie
 - 👉 可自定义 Cookie TS 类型提示(重写模块 ICookieData 类型定义即可) - Support Custom TS
 
 ## 安装方式 - Installation
@@ -64,12 +65,12 @@ console.log(MiniCookie.get('cookieName'))
 
 | 方法名    | 描述                                 | 参数                                               | 返回值            |
 | --------- | ------------------------------------ | -------------------------------------------------- | ----------------- |
-| get       | 获取 Cookie                          | get(key:string)                                    | any               |
-| set       | 设置 Cookie                          | set(key:string, value:any,opts:IMiniCookieOpts)    | boolean           |
-| has       | 判断 Cookie 是否存在                 | has(key:string)                                    | boolean           |
-| del       | 删除 Cookie                          | del(key:string)                                    | boolean           |
+| get       | 获取 Cookie                          | get(key:string, opts:IMiniCookieOpts)                                    | any               |
+| set       | 设置 Cookie                          | set(key:string, value:any, opts:IMiniCookieOpts)    | boolean           |
+| has       | 判断 Cookie 是否存在                 | has(key:string, opts:IMiniCookieOpts)                                    | boolean           |
+| del       | 删除 Cookie                          | del(key:string, opts:IMiniCookieOpts)                                    | boolean           |
 | parse     | 解析 Cookie 字符串 IMiniCookieObject | parse(cookie:string)                               | IMiniCookieObject |
-| serialize | 序列化 Cookie 对象                   | serialize(key:string,val:any,opts:IMiniCookieOpts) | string            |
+| serialize | 序列化 Cookie 对象                   | serialize(key:string, val:any, opts:IMiniCookieOpts) | string            |
 
 ## IMiniCookieOpts 类型参数
 
@@ -84,6 +85,7 @@ console.log(MiniCookie.get('cookieName'))
 | sameSite | "Strict", "Lax", "None" | 允许的跨域请求<br>Strict - 只允许同源的请求访问 <br>Lax - 允许跨域的请求访问 <br>None - 会在所有请求中发送，但需要同时设置Secure属性 | 空 |
 | partitioned | boolean | 是否开启分区 | false |
 | priority | "High", "Medium", "Low" | 浏览器保留优先级权重<br> High - 高保留权重 <br> Medium - 中等保留权重 <br> Low - 低保留权重 <br> 当Cookie达存储上限时低保留权重会被优先清除 | "Medium" |
+| ctx | Nextjs.GetServerSidePropsContext | nextjs 服务端获取及设置 cookie >=0.0.8 版本支持 | undefined |
 
 ## 覆写 ICookieData 获得自定义 TS 类型提示(可选)
 
