@@ -2,7 +2,7 @@
 const RE_specialContent = /^[\u0009\u0020-\u007e\u0080-\u00ff]+$/;
 
 /**
- * cookie序列化
+ * @name cookie-序列化
  * @param {string} name cookie名称
  * @param {*} val cookie值
  * @param {MiniCookie.IMiniCookieOpts} opts 自定义配置

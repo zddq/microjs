@@ -1,8 +1,8 @@
 import cookieSerialize from "./cookie-serialize";
 
 /**
- * cookie设置
- * @param {K} key cookie名称
+ * @name cookie-设置
+ * @param {K} key cookie键
  * @param {V} val cookie值
  * @param {MiniCookie.IMiniCookieOpts} opts cookie配置
  * @returns boolean true | false

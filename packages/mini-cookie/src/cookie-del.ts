@@ -1,7 +1,7 @@
 import cookieSet from "./cookie-set";
 
 /**
- * @name cookie删除
+ * @name cookie-删除
  * @param {string} key cookie名称
  * @param {MiniCookie.IMiniCookieOpts} opts cookie配置
  * @return boolean

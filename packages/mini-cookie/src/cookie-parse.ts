@@ -1,5 +1,5 @@
 /**
- * cookie字符串解析成对象
+ * @name cookie-字符串解析成对象
  * @param {string} cookieStr cookie字符串
  * @return Cookie Object
  */

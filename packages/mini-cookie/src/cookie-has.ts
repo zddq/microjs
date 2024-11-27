@@ -2,7 +2,7 @@ import { IMiniCookieOpts } from "types";
 import cookieParse from "./cookie-parse";
 
 /**
- * @name cookie查询是否存在
+ * @name cookie-检查是否存在
  * @param {K} key cookie名称
  * @param {IMiniCookieOpts} opts cookie配置
  * @returns boolean true | false

@@ -1,7 +1,7 @@
 import cookieParse from "./cookie-parse";
 
 /**
- * @name cookie获取
+ * @name cookie-获取
  * @param {string} key cookie名称
  * @param {MiniCookie.IMiniCookieOpts} opts cookie配置
  * @returns {O[K]} O[K]
