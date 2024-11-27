@@ -4,21 +4,26 @@
  * @return Cookie Object
  */
 export default function cookieParse<O extends MiniCookie.IMiniCookieData>(cookieStr: string): O {
-  if (!cookieStr || typeof cookieStr !== "string") {
+  try {
+    if (!cookieStr || typeof cookieStr !== "string") {
+      return {} as O;
+    }
+
+    return tryDecode(cookieStr)
+      .split(";")
+      .filter(Boolean)
+      .map(kvStr => kvStr.split("="))
+      .reduce((tmpObj, [key, val = ""]) => {
+        try {
+          return { ...tmpObj, [key.trim()]: JSON.parse(val.trim()) };
+        } catch (error) {
+          return { ...tmpObj, [key.trim()]: val.trim() };
+        }
+      }, {} as O);
+  } catch (error) {
+    console.error(error);
     return {} as O;
   }
-
-  return tryDecode(cookieStr)
-    .split(";")
-    .filter(Boolean)
-    .map(kvStr => kvStr.split("="))
-    .reduce((tmpObj, [key, val = ""]) => {
-      try {
-        return { ...tmpObj, [key.trim()]: JSON.parse(val.trim()) };
-      } catch (error) {
-        return { ...tmpObj, [key.trim()]: val.trim() };
-      }
-    }, {} as O);
 }
 
 function tryDecode(str: string) {

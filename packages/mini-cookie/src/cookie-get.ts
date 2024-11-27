@@ -18,7 +18,8 @@ export default function <O extends MiniCookie.IMiniCookieData, K extends keyof O
 
     // SSR nextjs
     return cookieParse<O>(opts.ctx.req.headers.cookie || "")[key];
-  } catch {
+  } catch (error) {
+    console.error(error);
     return cookieParse<O>("")[key];
   }
 }

@@ -14,7 +14,6 @@ export default function <O extends MiniCookie.IMiniCookieData, K extends keyof O
     }
 
     const setCookieStr = cookieSerialize(String(key), val, opts);
-
     // 新增 nextjs 服务端支持
     if (typeof window === "undefined") {
       if (!opts.ctx) {
