@@ -1,8 +1,8 @@
+import serialize from "./cookie-serialize";
+import parse from "./cookie-parse";
 import get from "./cookie-get";
 import set from "./cookie-set";
-import has from "./cookie-has";
 import del from "./cookie-del";
-import parse from "./cookie-parse";
-import serialize from "./cookie-serialize";
+import has from "./cookie-has";
 
-export default { get, set, has, del, parse, serialize };
+export default { serialize, parse, get, set, del, has };

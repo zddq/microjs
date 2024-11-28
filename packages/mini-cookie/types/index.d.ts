@@ -79,34 +79,34 @@ declare namespace MiniCookie {
    */
   interface MiniCookieStatic {
     /**
-     * 获取 cookie
+     * cookie 获取
      */
     get<K extends keyof ICookieData>(key: K, opts?: IMiniCookieOpts): ICookieData[K];
     /**
-     * 设置 cookie
+     * cookie 设置
      */
     set<K extends keyof ICookieData, V extends ICookieData[K]>(key: K, val: V, opts?: IMiniCookieOpts): boolean;
     /**
-     * 判断 cookie 是否存在
+     * cookie 是否存在
      */
     has<K extends keyof ICookieData>(key: K, opts?: IMiniCookieOpts): boolean;
     /**
-     * 删除 cookie
+     * cookie 删除
      */
     del<K extends keyof ICookieData>(key: K, opts?: IMiniCookieOpts): boolean;
     /**
-     * 解析 cookie 字符串,获得对象
+     * cookie 解析
      */
     parse<O>(cookieStr: string): O;
     /**
-     * 序列化 cookie 对象为字符串
+     * cookie 序列化
      */
     serialize(key: string, val: any, opts?: IMiniCookieOpts): string;
   }
 }
 
 /**
- * 浏览器 cookie 管理
+ * 浏览器/SSR-nextjs cookie 操作
  */
 declare const MiniCookie: MiniCookie.MiniCookieStatic;
 export = MiniCookie;
