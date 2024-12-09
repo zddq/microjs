@@ -1,6 +1,6 @@
 {
   "name": "mini-cookie",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "一个 Document.cookie 管理包 - A Document.cookie Manager Lib",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -11,7 +11,7 @@
     "build": "rollup -c rollup.config.mjs"
   },
   "devDependencies": {
-    "next": "^15.0.3"
+    "next": "^15.0.4"
   },
   "homepage": "https://github.com/zddq/microjs/tree/main/packages/mini-cookie/#README",
   "bugs": {
