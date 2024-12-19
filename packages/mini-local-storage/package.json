@@ -1,8 +1,7 @@
 {
   "name": "mini-local-store",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "description": "A Window localStorage Manager Lib",
-  "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "types/index.d.ts",
@@ -37,7 +36,7 @@
     "types"
   ],
   "scripts": {
-    "build": "rollup -c rollup.config.js",
+    "build": "rollup -c rollup.config.mjs",
     "test": "jest --coverage"
   },
   "dependencies": {},
