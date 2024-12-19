@@ -1,5 +1,4 @@
 import { getFullPrefixKey } from "./tool";
-import { aesEncrypt } from "./tool-aes";
 
 /**
  * 保存指定 key 的 data 数据到本地存储
@@ -9,7 +8,7 @@ export default function (key: string, data: any, config?: MiniLocalStorage.Confi
     throw Error("MiniLocalStorage is muse run in browser");
   }
 
-  const { expires, maxAge, isUseAes } = config ?? {};
+  const { expires, maxAge } = config ?? {};
   const tmpKey = getFullPrefixKey(key, config);
 
   // 设置有效时长(秒数)
@@ -19,12 +18,6 @@ export default function (key: string, data: any, config?: MiniLocalStorage.Confi
     }
 
     const saveVal = JSON.stringify({ data, maxAge: Date.now() + maxAge * 1000 } as MiniLocalStorage.Store);
-    // 数据加密
-    if (isUseAes) {
-      localStorage.setItem(tmpKey, aesEncrypt(saveVal, config));
-      return;
-    }
-
     localStorage.setItem(tmpKey, saveVal);
     return;
   }
@@ -36,22 +29,10 @@ export default function (key: string, data: any, config?: MiniLocalStorage.Confi
     }
 
     const saveVal = JSON.stringify({ data, maxAge: expires.getTime() } as MiniLocalStorage.Store);
-    // 数据加密
-    if (isUseAes) {
-      localStorage.setItem(tmpKey, aesEncrypt(saveVal, config));
-      return;
-    }
-
     localStorage.setItem(tmpKey, saveVal);
     return;
   }
 
   const saveVal = JSON.stringify({ data } as MiniLocalStorage.Store);
-  // 数据加密
-  if (isUseAes) {
-    localStorage.setItem(tmpKey, aesEncrypt(saveVal, config));
-    return;
-  }
-
   localStorage.setItem(tmpKey, saveVal);
 }

@@ -1,52 +1,45 @@
 {
-  "name": "mini-local-storage",
-  "version": "0.0.1",
-  "description": "一个 Window.localStorage 管理包 - A Window.localStorage Manager Lib",
+  "name": "mini-local-store",
+  "version": "0.0.1-alpha.1",
+  "description": "A Window localStorage Manager Lib",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
-  "browser": "dist/index.umd.js",
-  "unpkg": "dist/index.umd.js",
   "types": "types/index.d.ts",
-  "scripts": {
-    "build": "rollup -c rollup.config.js",
-    "test": "jest --coverage"
-  },
-  "dependencies": {
-    "crypto-js": "^4.2.0"
-  },
-  "devDependencies": {
-    "@types/crypto-js": "^4.2.2"
-  },
-  "homepage": "https://github.com/zddq/microjs/tree/main/packages/mini-local-storage/#README",
-  "bugs": {
-    "url": "https://github.com/zddq/microjs/issues",
-    "email": "microjs@yeah.net"
-  },
+  "unpkg": "dist/index.umd.js",
+  "browser": "dist/index.umd.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zddq/microjs.git",
     "directory": "packages/mini-local-storage"
   },
-  "author": "microJs <microjs@yeah.net> (https://github.com/zddq/microjs/#README.md)",
-  "license": "MIT",
-  "files": [
-    "dist",
-    "types"
-  ],
   "keywords": [
     "mini-local-storage",
+    "mini-local",
     "localStorage",
-    "expires",
-    "encrypt",
+    "prefix",
     "json",
-    "custom-prefix",
     "store",
     "esm",
     "cjs",
     "umd",
-    "js",
-    "ts",
     "microjs"
-  ]
+  ],
+  "author": "DQ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zddq/microjs/issues",
+    "email": "microjs@yeah.net"
+  },
+  "homepage": "https://github.com/zddq/microjs/tree/main/packages/mini-local-storage/#README",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "test": "jest --coverage"
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }

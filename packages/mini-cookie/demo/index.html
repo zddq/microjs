@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,13 +8,13 @@
 
   <body>
     <script type="module">
-      import miniCookie from "../dist/index.esm.js";
-      console.log("miniCookie 包对象: ", miniCookie);
-      miniCookie.set("cookieName", "cookieValue");
-      console.log(miniCookie.get("cookieName"));
-      console.log(miniCookie.has("cookieName"));
-      console.log(miniCookie.del("cookieName"));
-      console.log(miniCookie.has("cookieName"));
+      import mc from "../dist/index.esm.js";
+      console.log("mc 包对象: ", mc);
+      mc.init({ maxAge: 20 });
+      window.MC = mc;
+      mc.set("key", "val");
+      console.log(mc.has("key"));
+      console.log(mc.get("key"));
     </script>
   </body>
 </html>

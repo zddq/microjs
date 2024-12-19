@@ -1,48 +1,39 @@
 {
   "name": "mini-cookie",
-  "version": "1.0.3",
-  "description": "一个 Document.cookie 管理包 - A Document.cookie Manager Lib",
+  "version": "1.0.4-alpha",
+  "description": "A Document.cookie Manager Lib",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
-  "browser": "dist/index.umd.js",
-  "unpkg": "dist/index.umd.js",
   "types": "types/index.d.ts",
-  "scripts": {
-    "build": "rollup -c rollup.config.mjs"
-  },
-  "devDependencies": {
-    "next": "^15.0.4"
-  },
-  "homepage": "https://github.com/zddq/microjs/tree/main/packages/mini-cookie/#README",
-  "bugs": {
-    "url": "https://github.com/zddq/microjs/issues",
-    "email": "microjs@yeah.net"
-  },
+  "unpkg": "dist/index.umd.js",
+  "browser": "dist/index.umd.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zddq/microjs.git",
     "directory": "packages/mini-cookie"
   },
-  "author": "microJs <microjs@yeah.net> (https://github.com/zddq/microjs/#README.md)",
+  "keywords": [
+    "mini-cookie",
+    "nextjs",
+    "esm",
+    "cmd",
+    "umd"
+  ],
+  "author": "DQ",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zddq/microjs/issues",
+    "email": "microjs@yeah.net"
+  },
+  "homepage": "https://github.com/zddq/microjs/tree/main/packages/mini-cookie/#README",
   "files": [
     "dist",
     "types"
   ],
-  "keywords": [
-    "mini",
-    "cookie",
-    "mini cookie",
-    "mini-cookie",
-    "cookie-management",
-    "esm",
-    "cjs",
-    "umd",
-    "js",
-    "ts",
-    "javascript",
-    "typescript",
-    "cookies",
-    "microjs"
-  ]
+  "scripts": {
+    "build": "rollup -c rollup.config.mjs"
+  },
+  "devDependencies": {
+    "next": "^15.1.0"
+  }
 }

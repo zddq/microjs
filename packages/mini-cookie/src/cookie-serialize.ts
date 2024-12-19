@@ -1,16 +1,20 @@
 /** 特殊字符匹配 */
 const RE_specialContent = /^[\u0009\u0020-\u007e\u0080-\u00ff]+$/;
 
+function isDate(val: any) {
+  return Object.prototype.toString.call(val) === "[object Date]" || val instanceof Date;
+}
+
 /**
  * @name cookie-序列化
- * @param {string} name cookie名称
- * @param {*} val cookie值
- * @param {MiniCookie.IMiniCookieOpts} opts 自定义配置
+ * @param key 键值
+ * @param val 数据值
+ * @param config 配置
  */
-export default function cookieSerialize(name: string, val: any, opts: MiniCookie.IMiniCookieOpts = {}): string {
-  const opt = opts || {};
+export default function (key: string, val: any, config: MiniCookie.Config = {}): string {
+  const opt = config || {};
 
-  if (!RE_specialContent.test(name)) {
+  if (!RE_specialContent.test(key)) {
     throw new TypeError("argument name is invalid");
   }
 
@@ -19,7 +23,7 @@ export default function cookieSerialize(name: string, val: any, opts: MiniCookie
     throw new TypeError("argument val is invalid");
   }
 
-  let str = `${name}=${value}`;
+  let str = `${key}=${value}`;
   if (opt.domain) {
     if (!RE_specialContent.test(opt.domain)) {
       throw new TypeError("option domain is invalid");
@@ -75,11 +79,4 @@ export default function cookieSerialize(name: string, val: any, opts: MiniCookie
   }
 
   return str;
-}
-
-/**
- * @name 是否日期
- */
-function isDate(val: any) {
-  return Object.prototype.toString.call(val) === "[object Date]" || val instanceof Date;
 }

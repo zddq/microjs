@@ -4,8 +4,8 @@ mini-cookie 是一个轻量级的 JavaScript 库，旨在简化对浏览器 Docu
 
 - 😄 无依赖包 - No Dependency
 - 🤡 支持广泛浏览器 - Support Extensive Browser
-- ✅ 支持 ESModule - Support ESM
-- ✅ 支持 CommonJS - Support CJS
+- ✅ 支持 ESM - Support ESM
+- ✅ 支持 CJS - Support CJS
 - ✅ 支持 UMD - Support UMD
 - ✅ 本身内置 TS 类型提示, 无需下载额外 @types 类型提示包 TS - Support TS
 - ✅ >=0.0.8 支持 SSR Nextjs cookie - Support SSR Nextjs cookie
@@ -63,13 +63,13 @@ console.log(MiniCookie.get('cookieName'))
 
 ## miniCookie 方法 - API
 
-| 方法名    | 描述                                 | 参数                                               | 返回值            |
-| --------- | ------------------------------------ | -------------------------------------------------- | ----------------- |
-| get       | 获取 Cookie                          | get(key:string, opts:IMiniCookieOpts)                                    | any               |
-| set       | 设置 Cookie                          | set(key:string, value:any, opts:IMiniCookieOpts)    | boolean           |
-| has       | 判断 Cookie 是否存在                 | has(key:string, opts:IMiniCookieOpts)                                    | boolean           |
-| del       | 删除 Cookie                          | del(key:string, opts:IMiniCookieOpts)                                    | boolean           |
-| parse     | 解析 Cookie 字符串 IMiniCookieObject | parse(cookie:string)                               | IMiniCookieObject |
+| 方法名    | 描述                                 | 参数                                                 | 返回值            |
+| --------- | ------------------------------------ | ---------------------------------------------------- | ----------------- |
+| get       | 获取 Cookie                          | get(key:string, opts:IMiniCookieOpts)                | any               |
+| set       | 设置 Cookie                          | set(key:string, value:any, opts:IMiniCookieOpts)     | boolean           |
+| has       | 判断 Cookie 是否存在                 | has(key:string, opts:IMiniCookieOpts)                | boolean           |
+| del       | 删除 Cookie                          | del(key:string, opts:IMiniCookieOpts)                | boolean           |
+| parse     | 解析 Cookie 字符串 IMiniCookieObject | parse(cookie:string)                                 | IMiniCookieObject |
 | serialize | 序列化 Cookie 对象                   | serialize(key:string, val:any, opts:IMiniCookieOpts) | string            |
 
 ## IMiniCookieOpts 类型参数
@@ -101,11 +101,3 @@ declare namespace MiniCookie {
 // 将 types/xxx.d.ts 加入到 tsconfig.json includes 中即可获得自定义类型提示功能咯
 
 ```
-
-## Blessing
-
-🥰 献给所有追求简洁与规范代码的开发者，愿我们的代码如诗般优雅，逻辑清晰，易于维护。
-
-## License
-
-MIT

@@ -10,10 +10,8 @@ export default function (key: string, config?: MiniLocalStorage.Config) {
 
   const len = localStorage.length;
   const keys = [];
-
   for (let i = 0; i < len; i++) {
     keys.push(localStorage.key(i));
   }
-
   return keys.some(it => it === getFullPrefixKey(key, config));
 }

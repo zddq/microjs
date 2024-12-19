@@ -4,7 +4,7 @@ declare namespace MiniCookie {
   /**
    * mini-cookie 设置可配置参数
    */
-  interface IMiniCookieOpts {
+  interface Config {
     /**
      * 域
      * @description 指定了哪些域可以接收该Cookie
@@ -67,47 +67,12 @@ declare namespace MiniCookie {
     ctx?: GetServerSidePropsContext;
   }
 
-  /**
-   * mini-cookie 内部类型
-   */
-  interface IMiniCookieData {
-    [key: string]: any;
-  }
-
-  /**
-   * mini-cookie 包含方法
-   */
-  interface MiniCookieStatic {
-    /**
-     * cookie 获取
-     */
-    get<K extends keyof ICookieData>(key: K, opts?: IMiniCookieOpts): ICookieData[K];
-    /**
-     * cookie 设置
-     */
-    set<K extends keyof ICookieData, V extends ICookieData[K]>(key: K, val: V, opts?: IMiniCookieOpts): boolean;
-    /**
-     * cookie 是否存在
-     */
-    has<K extends keyof ICookieData>(key: K, opts?: IMiniCookieOpts): boolean;
-    /**
-     * cookie 删除
-     */
-    del<K extends keyof ICookieData>(key: K, opts?: IMiniCookieOpts): boolean;
-    /**
-     * cookie 解析
-     */
-    parse<O>(cookieStr: string): O;
-    /**
-     * cookie 序列化
-     */
-    serialize(key: string, val: any, opts?: IMiniCookieOpts): string;
-  }
+  interface Static {}
 }
 
 /**
  * 浏览器/SSR-nextjs cookie 操作
  */
-declare const MiniCookie: MiniCookie.MiniCookieStatic;
+declare const MiniCookie: MiniCookie.Static;
 export = MiniCookie;
 export as namespace MiniCookie;
