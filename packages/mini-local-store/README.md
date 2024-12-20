@@ -9,7 +9,7 @@ mini-local-store 是一个轻量级的 JavaScript 库，旨在简化对浏览器
 - ✅ 支持 ESM - Support ESM
 - ✅ 支持 CJS - Support CJS
 - ✅ 支持 UMD - Support UMD
-- 👉 可自定义 Cookie TS 类型提示(重写模块 IMiniLocalStoreData 类型定义即可) - Support Custom TS
+- 👉 自定义 TS 类型提示(重写模块 IMiniLocalStoreData 类型接口定义即可) - Support Custom TS
 
 ## 安装方式 - Installation
 
@@ -89,7 +89,7 @@ console.log(LS.get('key'))
 | maxAge  | 过期时间，单位为秒           | number   | 0      |
 | expires | 过期时间(maxAge会覆盖此参数) | Date     | 0      |
 
-## 自定义 TS 类型提示(可选)
+## 自定义操作 TS 类型提示(可选)
 
 ```js
 // 覆写 IMiniLocalStoreData 类型接口
