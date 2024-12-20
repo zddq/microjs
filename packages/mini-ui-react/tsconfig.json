@@ -1,20 +1,7 @@
 {
-  "compilerOptions": {
-    "moduleResolution": "node",
-    "module": "ESNext",
-    "target": "ES5",
-    "outDir": "dist",
-
-    "declarationDir": "types",
-    "jsx": "react",
-
-    "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "declaration": true,
-    "sourceMap": true,
-    "strict": true
-  }
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }
