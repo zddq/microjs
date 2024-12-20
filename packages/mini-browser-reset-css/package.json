@@ -1,5 +1,5 @@
 {
-  "name": "mini-reset-css",
+  "name": "mini-browser-reset-css",
   "version": "0.0.1-alpha.1",
   "description": "浏览器样式重置文件",
   "main": "dist/reset.min.css",
@@ -10,7 +10,7 @@
     "dist"
   ],
   "keywords": [
-    "mini-reset-css",
+    "mini-browser-reset-css",
     "reset-browser-css",
     "reset-css",
     "browser"
