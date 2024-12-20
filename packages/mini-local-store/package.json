@@ -9,7 +9,7 @@
   "browser": "dist/index.umd.js",
   "files": [
     "dist",
-    "index.d.ts"
+    "types"
   ],
   "keywords": [
     "mini-local-Store",
