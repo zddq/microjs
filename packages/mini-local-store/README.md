@@ -5,9 +5,8 @@ mini-local-store 是一个轻量级的 JavaScript 库，旨在简化对浏览器
 - 🤡 支持广泛浏览器 - Support Extensive Browser
 - ✅ 自动处理数据的序列化与反序列化 - Support Serialization
 - ✅ 支持数据过期机制 - Support Expire
-- ✅ 支持数据加密 - Support Encrypt
 - ✅ 本身内置 TS 类型提示, 无需下载额外 @types 类型提示包 TS - Support TS
-- 👉 可自定义 Cookie TS 类型提示(重写模块 IMiniLocalStorageData 类型定义即可) - Support Custom TS
+- 👉 可自定义 Cookie TS 类型提示(重写模块 IMiniLocalStoreData 类型定义即可) - Support Custom TS
 
 ## 安装方式 - Installation
 
@@ -64,29 +63,29 @@ console.log(LS.get('key'))
 
 ## mini-local-store
 
-| 方法名  | 描述           | 参数                                        | 返回值          |
-| ------- | -------------- | ------------------------------------------- | --------------- |
-| create  | 创建实例       | create(config?:MiniLocalStorage.Config):any | create 实例对象 |
-| version | 当前包版本信息 |                                             |                 |
+| 方法名  | 描述           | 参数                                      | 返回值          |
+| ------- | -------------- | ----------------------------------------- | --------------- |
+| create  | 创建实例       | create(config?:MiniLocalStore.Config):any | create 实例对象 |
+| version | 当前包版本信息 |                                           |                 |
 
 ## create 实例对象 - API
 
-| 方法名  | 描述                             | 参数                                                         | 返回值  |
-| ------- | -------------------------------- | ------------------------------------------------------------ | ------- |
-| get     | 获取 key 值                      | get(key:string,config?:MiniLocalStorage.Config):any          | any     |
-| set     | 设置 key 的 val 到浏览器本地存储 | set(key:string,val:any,config?:MiniLocalStorage.Config):void | void    |
-| del     | 删除 key 值                      | del(key:string,config?:MiniLocalStorage.Config):void         | void    |
-| has     | 判断 key 是否存在                | has(key:string,config?:MiniLocalStorage.Config):boolean      | boolean |
-| version | 当前包版本信息                   |                                                              | string  |
+| 方法名  | 描述         | 参数                                                       | 返回值  |
+| ------- | ------------ | ---------------------------------------------------------- | ------- |
+| get     | 获取         | get(key:string,config?:MiniLocalStore.Config):any          | any     |
+| set     | 设置         | set(key:string,val:any,config?:MiniLocalStore.Config):void | void    |
+| del     | 删除         | del(key:string,config?:MiniLocalStore.Config):void         | void    |
+| has     | 判断是否存在 | has(key:string,config?:MiniLocalStore.Config):boolean      | boolean |
+| version | 版本信息     |                                                            | string  |
 
-## IMiniLocalStorageOpts 类型参数
+## IMiniLocalStoreOpts 类型参数
 
-## 覆写 IMiniLocalStorageData 获得自定义 TS 类型提示(可选)
+## 覆写 IMiniLocalStoreData 获得自定义 TS 类型提示(可选)
 
 ```js
-// 覆写 IMiniLocalStorageData 类型接口已获得类型提示
-// 例如: 在 type/xxx.d.ts | global.d.ts 中定义 IMiniLocalStorageData 类型接口
-interface IMiniLocalStorageData {
+// 覆写 IMiniLocalStoreData 类型接口已获得类型提示
+// 例如: 在 type/xxx.d.ts | global.d.ts 中定义 IMiniLocalStoreData 类型接口
+interface IMiniLocalStoreData {
   name:string
   age:number
 }

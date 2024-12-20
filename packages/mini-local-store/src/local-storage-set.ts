@@ -3,9 +3,9 @@ import { getFullPrefixKey } from "./tool";
 /**
  * 保存指定 key 的 data 数据到本地存储
  */
-export default function (key: string, data: any, config?: MiniLocalStorage.Config) {
+export default function (key: string, data: any, config?: MiniLocalStore.Config) {
   if (typeof window === "undefined") {
-    throw Error("MiniLocalStorage is muse run in browser");
+    throw Error("MiniLocalStore is muse run in browser");
   }
 
   const { expires, maxAge } = config ?? {};
@@ -17,7 +17,7 @@ export default function (key: string, data: any, config?: MiniLocalStorage.Confi
       throw Error("maxAge must be greater than 0");
     }
 
-    const saveVal = JSON.stringify({ data, maxAge: Date.now() + maxAge * 1000 } as MiniLocalStorage.Store);
+    const saveVal = JSON.stringify({ data, maxAge: Date.now() + maxAge * 1000 } as MiniLocalStore.Store);
     localStorage.setItem(tmpKey, saveVal);
     return;
   }
@@ -28,11 +28,11 @@ export default function (key: string, data: any, config?: MiniLocalStorage.Confi
       throw new Error("expires must be greater than now");
     }
 
-    const saveVal = JSON.stringify({ data, maxAge: expires.getTime() } as MiniLocalStorage.Store);
+    const saveVal = JSON.stringify({ data, maxAge: expires.getTime() } as MiniLocalStore.Store);
     localStorage.setItem(tmpKey, saveVal);
     return;
   }
 
-  const saveVal = JSON.stringify({ data } as MiniLocalStorage.Store);
+  const saveVal = JSON.stringify({ data } as MiniLocalStore.Store);
   localStorage.setItem(tmpKey, saveVal);
 }

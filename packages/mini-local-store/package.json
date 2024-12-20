@@ -1,21 +1,19 @@
 {
   "name": "mini-local-store",
-  "version": "0.0.1-alpha.3",
   "description": "A Window localStorage Manager Lib",
+  "version": "0.0.1-alpha.3",
+  "types": "types/index",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
-  "types": "types/index.d.ts",
   "unpkg": "dist/index.umd.js",
   "browser": "dist/index.umd.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zddq/microjs.git",
-    "directory": "packages/mini-local-storage"
-  },
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
   "keywords": [
-    "mini-local-storage",
-    "mini-local",
-    "localStorage",
+    "mini-local-Store",
+    "localStore",
     "prefix",
     "json",
     "store",
@@ -24,6 +22,11 @@
     "umd",
     "microjs"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zddq/microjs.git",
+    "directory": "packages/mini-local-storage"
+  },
   "author": "DQ",
   "license": "MIT",
   "bugs": {
@@ -31,10 +34,6 @@
     "email": "microjs@yeah.net"
   },
   "homepage": "https://github.com/zddq/microjs/tree/main/packages/mini-local-storage/#README",
-  "files": [
-    "dist",
-    "types"
-  ],
   "scripts": {
     "build": "rollup -c rollup.config.mjs",
     "test": "jest --coverage"

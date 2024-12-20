@@ -1,10 +1,11 @@
 {
   "extends": ["../../package.json"],
   "compilerOptions": {
-    "rootDir": ".",
-    "baseUrl": ".",
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+
+    "rootDir": ".",
+    "baseUrl": "."
   },
-  "include": ["src", "types", "test"]
+  "include": ["src", "types", "test", "types/index.d.ts"]
 }

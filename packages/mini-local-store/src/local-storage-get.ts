@@ -5,14 +5,14 @@ import del from "./local-storage-del";
  * @name 获取本地值
  * @param key string
  */
-export default function (key: string, config?: MiniLocalStorage.Config) {
+export default function (key: string, config?: MiniLocalStore.Config) {
   const tmpVal = localStorage.getItem(getFullPrefixKey(key, config));
   try {
     if (typeof window === "undefined") {
-      throw Error("MiniLocalStorage is muse run in browser");
+      throw Error("MiniLocalStore is muse run in browser");
     }
 
-    const res: MiniLocalStorage.Store | null = JSON.parse(tmpVal || null);
+    const res: MiniLocalStore.Store | null = JSON.parse(tmpVal || null);
     if (res === null) return null;
 
     // 数据有存储日期效性判断

@@ -3,9 +3,9 @@ import { getFullPrefixKey } from "./tool";
 /**
  * 判断指定 key 是否存在
  */
-export default function (key: string, config?: MiniLocalStorage.Config) {
+export default function (key: string, config?: MiniLocalStore.Config) {
   if (typeof window === "undefined") {
-    throw Error("MiniLocalStorage is muse run in browser");
+    throw Error("MiniLocalStore is muse run in browser");
   }
 
   const len = localStorage.length;
