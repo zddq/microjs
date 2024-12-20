@@ -3,7 +3,8 @@
   "name": "microjs",
   "description": "Microjs 是一个资源平台，它帮助开发者发现和利用那些小巧、高效的JavaScript工具，以简化Web开发流程并提升项目性能。",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "b:mc": "pnpm -F mini-cookie build",
+    "b:mls": "pnpm -F mini-local-store build"
   },
   "keywords": [],
   "author": "DEVELOPER",
