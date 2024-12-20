@@ -1,0 +1,21 @@
+{
+  "name": "mini-reset-css",
+  "version": "0.0.1-alpha.1",
+  "description": "浏览器样式重置文件",
+  "main": "dist/reset.min.css",
+  "module": "dist/reset.min.css",
+  "unpkg": "dist/reset.min.css",
+  "browser": "dist/reset.min.css",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "mini-reset-css",
+    "reset-browser-css",
+    "reset-css",
+    "browser"
+  ],
+  "author": "DQ",
+  "license": "ISC",
+  "scripts": {}
+}
