@@ -89,16 +89,16 @@ console.log(LS.get('key'))
 | maxAge  | 过期时间，单位为秒           | number   | 0      |
 | expires | 过期时间(maxAge会覆盖此参数) | Date     | 0      |
 
-## 覆写 IMiniLocalStoreData 获得自定义 TS 类型提示(可选)
+## 自定义 TS 类型提示(可选)
 
 ```js
-// 覆写 IMiniLocalStoreData 类型接口已获得类型提示
-// 例如: 在 type/xxx.d.ts | global.d.ts 中定义 IMiniLocalStoreData 类型接口
+// 覆写 IMiniLocalStoreData 类型接口
+// 例如: 在 type/xxx.d.ts | global.d.ts 或某个 .d.ts 文件中定义 IMiniLocalStoreData 类型接口
 interface IMiniLocalStoreData {
   name:string
   age:number
 }
-// 将 types/xxx.d.ts 加入到 tsconfig.json includes 中即可获得自定义类型提示功能咯
+// 将 types/xxx.d.ts 加入到 tsconfig.json includes 中即可获得自定义类型提示功能
 ```
 
 ## License
