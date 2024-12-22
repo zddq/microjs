@@ -1,10 +1,24 @@
 /**
- * 获取完整的key
+ * 获取完整存储的 key
+ * @param key 键
+ * @param config 配置项
+ * @returns string
  */
-export function getFullPrefixKey(key: string, config?: MiniLocalStore.Config) {
-  if (!config || !config.prefix || !config.prefix.trim()) {
-    return `${key}`;
-  }
+export function getFullKeyStr(key: string, config: Config = {}) {
+  const prefixStr = String(config.prefix || "").trim();
+  const keyStr = String(key).trim();
+  return prefixStr ? `${prefixStr}_${keyStr}` : `${keyStr}`;
+}
 
-  return `${config.prefix.trim()}_${key}`;
+/**
+ * 判断是否支持本地存储
+ * @returns boolean
+ */
+export function isSupport() {
+  try {
+    if (typeof window === "undefined" || typeof localStorage === "undefined") return false;
+    return !!window.localStorage;
+  } catch (error) {
+    return false;
+  }
 }

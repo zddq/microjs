@@ -3,5 +3,5 @@
 /**
  * 浏览器 localStorage 管理
  */
-declare const MiniLocalStore: MiniLocalStore.Static;
+declare const MiniLocalStore: Static<IMiniLocalStorage>;
 export default MiniLocalStore;
