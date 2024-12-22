@@ -1,6 +1,6 @@
 {
-  "name": "@mini/reset-css",
-  "version": "0.0.1-alpha.2",
+  "name": "@minisss/reset-css",
+  "version": "0.0.1-alpha",
   "description": "浏览器样式重置文件",
   "main": "reset.min.css",
   "module": "reset.min.css",
@@ -10,12 +10,11 @@
     "reset.mini.css"
   ],
   "keywords": [
-    "@mini/reset-css",
-    "reset-browser-css",
+    "minisss-reset-css",
     "reset-css",
-    "browser"
+    "minisss"
   ],
-  "author": "DQ",
-  "license": "ISC",
+  "author": "minisss",
+  "license": "MIT",
   "scripts": {}
 }
