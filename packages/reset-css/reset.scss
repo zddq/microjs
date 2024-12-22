@@ -1,16 +1,16 @@
 // 文档结构元素
 html,
 body {
-	box-sizing: border-box;
+  box-sizing: border-box;
 
-	padding: 0;
-	margin: 0;
-	border: none;
-	outline: none;
-	background: #f7f8f9;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background: #f7f8f9;
 
-	color: rgba(0, 0, 0, 0.85);
-	font-size: 14px;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
 }
 
 // 元数据
@@ -39,21 +39,21 @@ iframe,canvas,
 ruby,rp,rt,
 // Web组件插槽元素
 slot,template {
-	box-sizing: border-box;
+  box-sizing: border-box;
 
-	padding: 0;
-	margin: 0;
-	border: none;
-	outline: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
 
-	color: inherit;
-	font-size: inherit;
+  color: inherit;
+  font-size: inherit;
 }
 
 span {
-	display: inline-block;
+  display: inline-block;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }

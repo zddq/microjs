@@ -1,19 +1,29 @@
 {
   "name": "@minisss/reset-css",
-  "version": "0.0.1-alpha",
+  "version": "1.0.0",
   "description": "浏览器样式重置文件",
-  "main": "reset.min.css",
-  "module": "reset.min.css",
-  "unpkg": "reset.min.css",
-  "browser": "reset.min.css",
-  "files": [
-    "reset.mini.css"
-  ],
   "keywords": [
-    "minisss-reset-css",
+    "@minisss/reset-css",
     "reset-css",
     "minisss"
   ],
+  "files": [
+    "reset.mini.css"
+  ],
+  "browser": "reset.min.css",
+  "module": "reset.min.css",
+  "main": "reset.min.css",
+  "unpkg": "reset.min.css",
+  "homepage": "https://github.com/zddq/microjs/tree/main/packages/reset-css/#README",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zddq/microjs.git",
+    "directory": "packages/reset-css"
+  },
+  "bugs": {
+    "url": "https://github.com/zddq/microjs/issues",
+    "email": "mini_npm_lib@163.net"
+  },
   "author": "minisss",
   "license": "MIT",
   "scripts": {}

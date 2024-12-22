@@ -2,16 +2,8 @@
   "name": "mini-cookie",
   "version": "1.0.4-alpha",
   "description": "A Document.cookie Manager Lib",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "types": "types/index.d.ts",
-  "unpkg": "dist/index.umd.js",
-  "browser": "dist/index.umd.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zddq/microjs.git",
-    "directory": "packages/mini-cookie"
-  },
+  "author": "DQ",
+  "license": "MIT",
   "keywords": [
     "mini-cookie",
     "nextjs",
@@ -19,17 +11,25 @@
     "cmd",
     "umd"
   ],
-  "author": "DQ",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/zddq/microjs/issues",
-    "email": "microjs@yeah.net"
-  },
-  "homepage": "https://github.com/zddq/microjs/tree/main/packages/mini-cookie/#README",
   "files": [
     "dist",
     "types"
   ],
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "types/index.d.ts",
+  "unpkg": "dist/index.umd.js",
+  "browser": "dist/index.umd.js",
+  "homepage": "https://github.com/zddq/microjs/tree/main/packages/mini-cookie/#README",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zddq/microjs.git",
+    "directory": "packages/mini-cookie"
+  },
+  "bugs": {
+    "url": "https://github.com/zddq/microjs/issues",
+    "email": "microjs@yeah.net"
+  },
   "scripts": {
     "build": "rollup -c rollup.config.mjs"
   },
