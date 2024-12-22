@@ -1,47 +1,37 @@
 {
-  "name": "mini-is",
-  "version": "1.0.5",
-  "description": "小而美的 JS 类型判断方法库 - Small and Beautiful JS Type Judgment Method Library",
-  "type": "module",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "browser": "dist/index.umd.js",
-  "unpkg": "dist/index.umd.js",
-  "types": "types/index.d.ts",
-  "scripts": {
-    "build": "rollup -c rollup.config.js",
-    "test": "jest --coverage"
-  },
-  "dependencies": {},
-  "devDependencies": {},
+  "name": "@minisss/is",
+  "version": "0.0.1",
+  "description": "Small and Beautiful JS Type Judgment Method Library",
+  "keywords": [
+    "@minisss/is",
+    "is",
+    "minisss"
+  ],
   "files": [
     "dist",
     "types"
   ],
-  "homepage": "https://github.com/zddq/microjs/tree/main/packages/mini-is/#README",
-  "bugs": {
-    "url": "https://github.com/zddq/microjs/issues",
-    "email": "microjs@yeah.net"
-  },
+  "browser": "dist/index.umd.js",
+  "module": "dist/index.esm.js",
+  "main": "dist/index.cjs.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "types/index.d.ts",
+  "homepage": "https://github.com/zddq/microjs/tree/main/packages/is/#README",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zddq/microjs.git",
-    "directory": "packages/mini-is"
+    "directory": "packages/is"
   },
-  "author": "microJs <microjs@yeah.net> (https://github.com/zddq/microjs/#README.md)",
+  "bugs": {
+    "url": "https://github.com/zddq/microjs/issues",
+    "email": "mini_npm_lib@163.com"
+  },
+  "author": "minisss",
   "license": "MIT",
-  "keywords": [
-    "mini-is",
-    "mini",
-    "is",
-    "js-type-check",
-    "esm",
-    "cjs",
-    "umd",
-    "js",
-    "ts",
-    "javascript",
-    "typescript",
-    "microjs"
-  ]
+  "scripts": {
+    "build": "rollup -c rollup.config.mjs",
+    "test": "jest --coverage"
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }

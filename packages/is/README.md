@@ -28,13 +28,13 @@ pnpm i mini-is
 yarn add mini-is
 
 # npm
-npm i mini-is
+npm install mini-is
 
 # bun
 bun install mini-is
 ```
 
-## Usage
+## 使用方法
 
 ```js
 // ESM xxx.js
@@ -47,13 +47,13 @@ console.log(isString('hello'));
 
 // script type module 模块化内部引入方式
 <script type="module">
-  import * as MiniIs from "https://unpkg.com/mini-is@1.0.5/dist/index.esm.js";
+  import * as MiniIs from "https://unpkg.com/@minisss/is@0.0.1/dist/index.esm.js";
   console.log("MiniIs 包对象: ", MiniIs);
   console.log("MiniIs.isString('11') 结果: ", MiniIs.isString("11"));
 </script>
 
 // script 普通 script 直接导入 -> 访问全局变量 MiniIs
-<script src="https://unpkg.com/mini-is"></script>
+<script src="https://unpkg.com/@minisss/is@0.0.1"></script>
 <script>
 console.log(MiniIs)
 </script>
