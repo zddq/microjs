@@ -92,5 +92,5 @@ interface Static<O> extends Instance<O> {
    * @example const MLS = MiniLocalStore.create({ prefix: "custom_prefix_" });
    * @returns {Instance} create Instance
    */
-  create<O>(config?: Partial<Config>): Instance<O>;
+  create<OO extends O>(config?: Partial<Config>): Instance<OO>;
 }
