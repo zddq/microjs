@@ -94,5 +94,3 @@ interface Static<O> extends Instance<O> {
    */
   create<O>(config?: Partial<Config>): Instance<O>;
 }
-
-type IMiniLocalStorage = any;
