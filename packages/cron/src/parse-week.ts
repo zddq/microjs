@@ -15,8 +15,8 @@ export default function parseCronWeek(cronStr: string, min: number, max: number)
   }
 
   const cronStrArr = String(str || "").trim().split(',').map(txt => txt.trim());
-  // 如何存在通配符 * 择返回全部区间
-  if (cronStrArr.includes("*")) return Array.from({ length: max - min + 1 }).map((_, i) => i + min)
+  // 如何存在通配符 * ? 择返回全部区间
+  if (cronStrArr.includes("*") || cronStrArr.includes("?")) return Array.from({ length: max - min + 1 }).map((_, i) => i + min)
 
   return cronStrArr.map(txt => {
     // 匹配 -> x#y 当月第y个星期x
@@ -25,8 +25,9 @@ export default function parseCronWeek(cronStr: string, min: number, max: number)
     // 匹配 -> xL 当月最后一个星期x
     if (RE.WEEK_xL.test(txt)) return [txt]
 
+    // 特殊处理 7
     if (RE.NUM.test(txt) && +txt == 7) return [0]
 
-    return parseCronItem(txt, min, max)
+    return parseCronItem(txt, min, max, "week")
   }).flat(1)
 }

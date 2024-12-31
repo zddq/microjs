@@ -15,8 +15,8 @@ export default function parseCronDay(cronStr: string, min: number, max: number) 
   }
 
   const cronStrArr = String(str || "").trim().split(',').map(txt => txt.trim());
-  // 如何存在通配符 * 择返回全部区间
-  if (cronStrArr.includes("*")) return Array.from({ length: max - min + 1 }).map((_, i) => i + min)
+  // 如何存在通配符 * ? 择返回全部区间
+  if (cronStrArr.includes("*") || cronStrArr.includes("?")) return Array.from({ length: max - min + 1 }).map((_, i) => i + min)
 
   return cronStrArr.map(txt => {
     // 匹配 -> L 当月最后一天
@@ -28,6 +28,6 @@ export default function parseCronDay(cronStr: string, min: number, max: number) 
     // 匹配 -> xW 当月x日最近工作日
     if (RE.DAY_xW.test(txt)) return [txt]
 
-    return parseCronItem(txt, min, max)
+    return parseCronItem(txt, min, max, "day")
   }).flat(1)
 }

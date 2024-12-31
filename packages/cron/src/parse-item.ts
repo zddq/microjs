@@ -5,9 +5,10 @@ import { RE } from "./regexp"
  * @param cronStr cron表达式
  * @param min 最小值
  * @param max 最大值
+ * @param type 当前解析类型
  * @returns 数字数组
  */
-export default function parseCronItem(cronStr: string, min: number, max: number) {
+export default function parseCronItem(cronStr: string, min: number, max: number, type: keyof ICronTime) {
   // 通配符匹配 -> *
   if (cronStr === "*") return Array.from({ length: max - min + 1 }, (_, i) => i + min)
 
@@ -40,5 +41,5 @@ export default function parseCronItem(cronStr: string, min: number, max: number)
     return Array.from({ length: Math.ceil((max - minNum) / maxNum) + 1 }, (_, i) => i * maxNum + minNum).filter(num => num >= min && num <= max)
   }
 
-  return []
+  throw new Error(`当前 ${type} ${cronStr} cron表达式无效`)
 }

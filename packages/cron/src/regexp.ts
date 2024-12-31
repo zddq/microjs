@@ -3,7 +3,7 @@
  */
 export const RE = {
   /** 星期 x#y -> 当月第 y 个星期 x */
-  WEEK_XY: /^\d+#\d+$/,
+  WEEK_XY: /^\d+#(\d+|\*)$/,
   /** 最后一个星期x */
   WEEK_xL: /^\d+L$/,
 
