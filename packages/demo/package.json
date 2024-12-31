@@ -1,0 +1,36 @@
+{
+  "name": "@minisss/demo",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [
+    "@minisss/demo",
+    "demo",
+    "minisss"
+  ],
+  "files": [
+    "dist",
+    "types"
+  ],
+  "browser": "dist/index.umd.js",
+  "module": "dist/index.esm.js",
+  "main": "dist/index.cjs.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "types/index.d.ts",
+  "homepage": "https://github.com/zddq/microjs/tree/main/packages/demo/#README",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zddq/microjs.git",
+    "directory": "packages/demo"
+  },
+  "bugs": {
+    "url": "https://github.com/zddq/microjs/issues",
+    "email": "microjs@yeah.net"
+  },
+  "author": "minisss",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c rollup.config.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
