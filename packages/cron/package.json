@@ -1,10 +1,12 @@
 {
   "name": "@minisss/cron",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.1",
   "description": "",
   "keywords": [
     "@minisss/cron",
     "cron",
+    "task",
+    "job",
     "minisss"
   ],
   "files": [
@@ -29,6 +31,7 @@
   "author": "minisss",
   "license": "MIT",
   "scripts": {
+    "dev": "rollup -c rollup.config.mjs --watch",
     "build": "rollup -c rollup.config.mjs"
   },
   "dependencies": {},
