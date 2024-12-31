@@ -1,3 +1,4 @@
+import { DEMO_CRON } from "./config"
 import { RE } from "./regexp"
 
 /**
@@ -41,5 +42,5 @@ export default function parseCronItem(cronStr: string, min: number, max: number,
     return Array.from({ length: Math.ceil((max - minNum) / maxNum) + 1 }, (_, i) => i * maxNum + minNum).filter(num => num >= min && num <= max)
   }
 
-  throw new Error(`当前 ${type} ${cronStr} cron表达式无效`)
+  throw new Error(`当前 ${type} ${cronStr} cron表达式无效 目前近支持 ${DEMO_CRON[type]} 特殊字符`)
 }
