@@ -47,8 +47,10 @@ interface ICronConf {
 interface ICron {
   /**
    * 添加任务
-   * @param cronExpression 表达式
+   * @param cronExpression 表达式 例如: 00 00 * * * 每天晚上12点执行任务
    * @param task 执行任务
+   * @param conf 配置
+   * @returns {ITask} ITask
    */
   add: (cronExpression: string, task: Function, conf?: ICronConf) => ITask;
 }
