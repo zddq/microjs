@@ -97,7 +97,7 @@ function getNextRunTime(data: ICronTime, conf: ICronConf) {
     }
 
     // 检查秒
-    if (!second.includes(next.getSeconds())) {
+    if (second.length > 0 && !second.includes(next.getSeconds())) {
       next.setSeconds(next.getSeconds() + 1, 0)
       continue
     }

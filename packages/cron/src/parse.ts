@@ -29,7 +29,7 @@ export function parseCronExpressionFn(cronExpression: string): ICronTime {
     day: parseCronDay(day, 1, 31),
     hour: parseCronBase(hour, 0, 23, 'hour'),
     minute: parseCronBase(minute, 0, 59, 'minute'),
-    second: parseCronBase(second || "*", 0, 59, 'second'),
+    second: parseCronBase(second, 0, 59, 'second'),
   };
 }
 
