@@ -114,7 +114,5 @@ export function getDelay(data: ICronTime, conf: ICronConf) {
   const now = new Date()
   const nextRunTime = getNextRunTime(data, conf)
   const delay = nextRunTime.getTime() - now.getTime()
-  console.log("now", now);
-  console.log("nextRunTime", nextRunTime);
   return delay <= 0 ? 1000 : delay
 }
