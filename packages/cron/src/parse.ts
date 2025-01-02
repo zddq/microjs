@@ -21,7 +21,7 @@ export function parseCronExpressionFn(cronExpression: string): ICronTime {
   // 获取周、月、日、时、分、秒
   const len = strArr.length;
   const [week, month, day, hour, minute, second] = [strArr[len - 1], strArr[len - 2], strArr[len - 3], strArr[len - 4], strArr[len - 5], strArr[len - 6] || ""];
-  console.log(`week: ${week} month: ${month} day: ${day} hour: ${hour} minute: ${minute} second: ${second}`);
+  // console.log(`week: ${week} month: ${month} day: ${day} hour: ${hour} minute: ${minute} second: ${second}`);
 
   return {
     week: parseCronWeek(week, 0, 7),
