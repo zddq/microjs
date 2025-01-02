@@ -1,35 +1,120 @@
-import parseCronBase from "./parse-base";
-import parseCronDay from "./parse-day";
-import parseCronWeek from "./parse-week";
-
-const cronDemo = `*(可选) * * * * *`;
-const cronMin = 5;
-const cronMax = 6;
+import getSpecialDays from "./tool-day";
+import getSpecialWeekDays, { getWeeks } from "./tool-week";
 
 /**
- * cron 表达式解析
- * @param cronExpression cron表达式
- * @returns ICronTime
+ * 获取当前月份的天数
+ * @param {number} year - 年份
+ * @param {number} month - 月份（1-12）
+ * @returns {number} 天数
  */
-export function parseCronExpressionFn(cronExpression: string): ICronTime {
-  console.log("parse cron str", cronExpression);
-  const strArr = String(cronExpression).trim().split(" ");
-  // 位数判断
-  if (!strArr || strArr.length < cronMin || strArr.length > cronMax) {
-    throw new Error(`当前 ${cronExpression} cron表达式暂不支持`);
+export function getDaysInMonth(year, month) {
+  return new Date(year, month, 0).getDate();
+}
+
+
+/**
+ * @name 获取去重的数组(天数)
+ * @returns {number[]} day[]
+ */
+export function getOnlyDayNum(days: number[]) {
+  return days.reduce((arr, it) => arr.some(i => i == it) ? arr : [...arr, it], [] as number[])
+}
+
+/**
+ * 当天是否符合cron表达式, 不符合则加一天执行进行再次判断
+ * @param {Date} next - 下次执行时间
+ * @param {number[]} days - 天数
+ * @param {number[]} weeks - 星期
+ * @param {number[]} weekDays - 特殊星期字符天数
+ * @param {ICronConf} conf - 配置
+ * @returns {boolean}
+ */
+function isNeedAddDay(next: Date, days: number[], weeks: number[], weekDays: number[], conf: ICronConf) {
+  const { isDayWeekAnd = false } = conf || {}
+  const day = next.getDate()
+  const week = next.getDay()
+  if (isDayWeekAnd) {
+    return !days.some(i => i == day) || !(weeks.some(i => i == week) || weekDays.some(i => i == day))
   }
 
-  // 获取周、月、日、时、分、秒
-  const len = strArr.length;
-  const [week, month, day, hour, minute, second] = [strArr[len - 1], strArr[len - 2], strArr[len - 3], strArr[len - 4], strArr[len - 5], strArr[len - 6] || ""];
-  console.log(`week: ${week} month: ${month} day: ${day} hour: ${hour} minute: ${minute} second: ${second}`);
 
-  return {
-    week: parseCronWeek(week, 0, 7),
-    month: parseCronBase(month, 1, 12, "month"),
-    day: parseCronDay(day, 1, 31),
-    hour: parseCronBase(hour, 0, 23, 'hour'),
-    minute: parseCronBase(minute, 0, 59, 'minute'),
-    second: second ? parseCronBase(second, 0, 59, 'second') : [],
-  };
+  if (days.some(i => i == day) || weeks.some(i => i == week) || weekDays.some(i => i == day)) {
+    return false
+  }
+
+  return true
+}
+
+
+/**
+ * 获取下次执行时间
+ * @param data 时间字段数据
+ * @returns Date
+ */
+function getNextRunTime(data: ICronTime, conf: ICronConf) {
+  const now = new Date() // 当前时间
+  const next = new Date(now.getTime()) // 初始化为当前时间
+  // cron各日期字段
+  const { week, month, day, hour, minute, second } = data
+
+  // 数字 - 星期
+  const weeks = getWeeks(week)
+  let weekDays = getSpecialWeekDays(next, week)
+  // 数字 - 天
+  let days = getSpecialDays(next, day)
+
+  let taskCount = 0
+  while (true) {
+    taskCount += 1
+    if (taskCount >= 800) break
+
+    // 检查月份
+    if (!month.includes(next.getMonth() + 1)) {
+      next.setMonth(next.getMonth() + 1, 1)
+      next.setHours(0, 0, 0, 0)
+      weekDays = getSpecialWeekDays(next, week)
+      days = getSpecialDays(next, day)
+      continue
+    }
+
+    // 检查日期与星期
+    if (isNeedAddDay(next, days, weeks, weekDays, conf)) {
+      next.setDate(next.getDate() + 1)
+      next.setHours(0, 0, 0, 0)
+      continue
+    }
+
+    // 检查小时
+    if (!hour.includes(next.getHours())) {
+      next.setHours(next.getHours() + 1, 0, 0, 0)
+      continue
+    }
+
+    // 检查分钟
+    if (!minute.includes(next.getMinutes())) {
+      next.setMinutes(next.getMinutes() + 1, 0, 0)
+      continue
+    }
+
+    // 检查秒
+    if (!second.includes(next.getSeconds())) {
+      next.setSeconds(next.getSeconds() + 1, 0)
+      continue
+    }
+    break;
+  }
+
+  return next
+}
+
+/**
+ * 计算延迟时间(毫秒)
+ * @param data 时间字段数据
+ * @returns 延迟时间(毫秒)
+ */
+export function getDelay(data: ICronTime, conf: ICronConf) {
+  const nextRunTime = getNextRunTime(data, conf)
+  const now = new Date()
+  const delay = nextRunTime.getTime() - now.getTime()
+  return delay <= 0 ? 1000 : delay
 }

@@ -11,7 +11,7 @@ import { RE } from "./regexp";
 export default function parseCronWeek(cronStr: string, min: number, max: number) {
   const str = String(cronStr).trim();
   if (!str) {
-    throw new Error(`当前 ${cronStr} cron表达式无效`);
+    throw new Error(`week ${cronStr} cron表达式无效`);
   }
 
   const cronStrArr = String(str || "").trim().split(',').map(txt => txt.trim());
@@ -19,7 +19,7 @@ export default function parseCronWeek(cronStr: string, min: number, max: number)
   if (cronStrArr.includes("*") || cronStrArr.includes("?")) return Array.from({ length: max - min + 1 }).map((_, i) => i + min)
 
   return cronStrArr.map(txt => {
-    // 匹配 -> x#y 当月第y个星期x
+    // 匹配 -> x#y 当月第y个星期x 或 x#* 当月每周第星期x
     if (RE.WEEK_XY.test(txt)) return [txt]
 
     // 匹配 -> xL 当月最后一个星期x

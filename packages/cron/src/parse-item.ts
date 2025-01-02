@@ -25,10 +25,15 @@ export default function parseCronItem(cronStr: string, min: number, max: number,
 
   // 匹配范围 -> -
   if (RE.NUM1.test(cronStr)) {
-    const [minNum, maxNum] = cronStr.split("-").map(num => parseInt(num, 10))
+    const [num1, num2] = cronStr.split("-").map(num => parseInt(num, 10))
+    if (num1 == num2) return [num1]
+
+    const minNum = Math.min(num1, num2)
+    const maxNum = Math.max(num1, num2)
     if (minNum < min || maxNum > max) {
       throw new Error(`指定范围: ${cronStr} out of range ${min}-${max}`)
     }
+
     return Array.from({ length: maxNum - minNum + 1 }, (_, i) => i + minNum)
   }
 
@@ -42,5 +47,5 @@ export default function parseCronItem(cronStr: string, min: number, max: number,
     return Array.from({ length: Math.ceil((max - minNum) / maxNum) + 1 }, (_, i) => i * maxNum + minNum).filter(num => num >= min && num <= max)
   }
 
-  throw new Error(`当前 ${type} ${cronStr} cron表达式无效 目前近支持 ${DEMO_CRON[type]} 特殊字符`)
+  throw new Error(`当前 ${type} ${cronStr} cron表达式无效 目前仅支持 ${DEMO_CRON[type]} 特殊字符`)
 }

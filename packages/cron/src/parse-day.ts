@@ -11,7 +11,7 @@ import { RE } from "./regexp";
 export default function parseCronDay(cronStr: string, min: number, max: number) {
   const str = String(cronStr).trim();
   if (!str) {
-    throw new Error(`当前 ${cronStr} cron表达式无效`);
+    throw new Error(`day ${cronStr} cron表达式无效`);
   }
 
   const cronStrArr = String(str || "").trim().split(',').map(txt => txt.trim());

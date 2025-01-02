@@ -1,15 +1,12 @@
-import { parseCronExpressionFn } from "./tool";
+import { parseCronExpressionFn } from "./parse";
+import Task from "./task";
 
 class Cron implements ICron {
   constructor() { }
 
-  add(cronExpression: string, task: Function) {
+  add(cronExpression: string, task: Function, conf: ICronConf = {}) {
     const res = parseCronExpressionFn(cronExpression)
-    console.log(res);
-
-    return {
-      stop() { },
-    };
+    return new Task(res, task, conf || {})
   }
 }
 

@@ -1,6 +1,7 @@
 {
   "extends": ["../../package.json"],
   "compilerOptions": {
+    "target": "ES5",
     "rootDir": ".",
     "baseUrl": "."
   },
