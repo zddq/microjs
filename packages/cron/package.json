@@ -1,6 +1,6 @@
 {
   "name": "@minisss/cron",
-  "version": "0.0.1-alpha.4",
+  "version": "0.0.1-alpha.5",
   "description": "",
   "keywords": [
     "@minisss/cron",
@@ -31,7 +31,7 @@
   "author": "minisss",
   "license": "MIT",
   "scripts": {
-    "dev": "rollup -c rollup.config.mjs --watch",
+    "w": "rollup -c rollup.config.mjs --watch",
     "build": "rollup -c rollup.config.mjs"
   },
   "dependencies": {},

@@ -6,7 +6,11 @@ class Cron implements ICron {
 
   add(cronExpression: string, task: Function, conf: ICronConf = {}) {
     const res = parseCronExpressionFn(cronExpression)
-    return new Task(res, task, conf || {})
+    console.log("RRR", res);
+
+    const tmpTask = new Task(res, conf || {})
+    tmpTask.run(task)
+    return tmpTask
   }
 }
 

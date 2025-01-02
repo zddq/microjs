@@ -37,7 +37,6 @@ function isNeedAddDay(next: Date, days: number[], weeks: number[], weekDays: num
     return !days.some(i => i == day) || !(weeks.some(i => i == week) || weekDays.some(i => i == day))
   }
 
-
   if (days.some(i => i == day) || weeks.some(i => i == week) || weekDays.some(i => i == day)) {
     return false
   }
@@ -52,10 +51,9 @@ function isNeedAddDay(next: Date, days: number[], weeks: number[], weekDays: num
  * @returns Date
  */
 function getNextRunTime(data: ICronTime, conf: ICronConf) {
-  const now = new Date() // 当前时间
+  const now = new Date()
   const next = new Date(now.getTime()) // 初始化为当前时间
-  // cron各日期字段
-  const { week, month, day, hour, minute, second } = data
+  const { week, month, day, hour, minute, second } = data // cron各日期字段
 
   // 数字 - 星期
   const weeks = getWeeks(week)
@@ -66,7 +64,7 @@ function getNextRunTime(data: ICronTime, conf: ICronConf) {
   let taskCount = 0
   while (true) {
     taskCount += 1
-    if (taskCount >= 800) break
+    if (taskCount >= 100) break
 
     // 检查月份
     if (!month.includes(next.getMonth() + 1)) {
@@ -97,7 +95,7 @@ function getNextRunTime(data: ICronTime, conf: ICronConf) {
     }
 
     // 检查秒
-    if (second.length > 0 && !second.includes(next.getSeconds())) {
+    if (second.length > 0 && (!second.includes(next.getSeconds()) || now.getTime() === next.getTime())) {
       next.setSeconds(next.getSeconds() + 1, 0)
       continue
     }
@@ -113,8 +111,10 @@ function getNextRunTime(data: ICronTime, conf: ICronConf) {
  * @returns 延迟时间(毫秒)
  */
 export function getDelay(data: ICronTime, conf: ICronConf) {
-  const nextRunTime = getNextRunTime(data, conf)
   const now = new Date()
+  const nextRunTime = getNextRunTime(data, conf)
   const delay = nextRunTime.getTime() - now.getTime()
+  console.log("now", now);
+  console.log("nextRunTime", nextRunTime);
   return delay <= 0 ? 1000 : delay
 }

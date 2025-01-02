@@ -7,11 +7,12 @@ import { getDelay } from "./tool"
  * @return Task
  */
 export default class Task {
+  private cronTime: ICronTime
   private conf: ICronConf = {}
   private tid: NodeJS.Timeout
-  constructor(cronTime: ICronTime, task: Function, conf: ICronConf) {
+  constructor(cronTime: ICronTime, conf: ICronConf) {
+    this.cronTime = cronTime
     this.conf = conf || {}
-    this.run(cronTime, task)
   }
   /**
    * 执行任务
@@ -19,12 +20,14 @@ export default class Task {
    * @function task 任务
    * @returns this
    */
-  private run(cronTime: ICronTime, task: Function) {
-    const delay = getDelay(cronTime, this.conf)
+  run(task: Function) {
     this.tid && clearTimeout(this.tid)
-    this.tid = setTimeout(async () => {
-      await task()
-      this.run(cronTime, task)
+    const delay = getDelay(this.cronTime, this.conf)
+    console.log("delay", delay);
+    this.tid = setTimeout(() => {
+      console.log("当前时间", new Date());
+      task()
+      this.run(task)
     }, delay)
     return this
   }
