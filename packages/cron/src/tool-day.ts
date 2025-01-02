@@ -68,8 +68,9 @@ export default function getSpecialDays(next: Date, day: (number | string)[]) {
   const year = next.getFullYear()
   const month = next.getMonth() + 1
 
-  const tmpDaysL = tmpDayL.map(txt => getLastFridayOfMonth(year, month, +txt == 7 ? 0 : +txt)).flat(1)
-  const tmpDaysW = tmpDayW.map(txt => getNthWorkdayOfMonth(year, month, +txt)).flat(1)
-  const days = [...tmpDays, ...tmpDaysL, ...tmpDaysW]
+  const tmpDaysL = [getDaysInMonth(year, month)]
+  const tmpDaysXl = tmpDayL.map(txt => getLastFridayOfMonth(year, month, +txt == 7 ? 0 : +txt)).flat(1)
+  const tmpDaysXw = tmpDayW.map(txt => getNthWorkdayOfMonth(year, month, +txt)).flat(1)
+  const days = [...tmpDays, ...tmpDaysL, ...tmpDaysXl, ...tmpDaysXw]
   return getOnlyDayNum(days)
 }
