@@ -30,73 +30,64 @@ bun install mini-local-store
 ### ESM
 
 ```js
-import MLS from 'mini-local-storage';
-MLS.set('key', 'val')
-console.log(MLS.get('key'))
+import MLS from "mini-local-storage";
+MLS.set("key", "val");
+console.log(MLS.get("key"));
 ```
 
 ### CJS
 
 ```js
-const MLS = require('mini-local-storage');
-MLS.set('key', 'val')
-console.log(MLS.get('key'))
+const MLS = require("mini-local-storage");
+MLS.set("key", "val");
+console.log(MLS.get("key"));
 ```
 
 ### UMD xxx.html 普通 script 直接导入 -> 访问全局变量 MLS
 
 ```js
-// UMD 
+// UMD
 <script src="https://unpkg.com/@minisss/localstorage@0.0.1-alpha.1"></script>;
-<script>
-  console.log("MLS 包对象: ", MLS)
-  MLS.set('key', 'val')
-  console.log(MLS.get('key'))
-  console.log(MLS.has('key'))
-</script>
+<script>console.log("MLS 包对象: ", MLS) MLS.set('key', 'val') console.log(MLS.get('key')) console.log(MLS.has('key'))</script>;
 ```
 
 ### UMD xxx.html script type module 模块化内部引入方式
 
 ```js
 <script type="module">
-  import MLS from "https://unpkg.com/@minisss/localstorage@0.0.1-alpha.1/dist/index.esm.js";
-  console.log("MLS 包对象: ", MLS)
-  MLS.set('key', 'val')
-  console.log(MLS.get('key'))
-  console.log(MLS.del('key'))
-  console.log(MLS.has('key'))
+  import MLS from "https://unpkg.com/@minisss/localstorage@0.0.1-alpha.1/dist/index.esm.js"; console.log("MLS 包对象: ", MLS) MLS.set('key', 'val') console.log(MLS.get('key'))
+  console.log(MLS.del('key')) console.log(MLS.has('key'))
 </script>
 ```
 
 ## API
 
-| 名称    | 描述     | 参数                                      | 返回值          |
-| ------- | -------- | ----------------------------------------- | --------------- |
-| create  | 创建实例(推荐) | create(config?:Config) | 实例对象 |
- set     | 设置     | set(key:string, val:any, config?:Config) | void    |
-| get     | 获取     | get(key:string, config?:Config)          | any     |
-| has     | 判断     | has(key:string, config?:Config)      | boolean |
-| del     | 删除     | del(key:string, config?:Config)         | boolean |
-| key     | 获取 key     | key(index:number)         | any |
-| clear     | 清除本地数据     | clear()  | void |
-| length     | 本地存储数量     |   | number |
-| isSupport     | 是否支持     |  | boolean |
-| version | 版本信息 |                                                            | string  |
+| 名称      | 描述           | 参数                                     | 返回值   |
+| --------- | -------------- | ---------------------------------------- | -------- |
+| create    | 创建实例(推荐) | create(config?:Config)                   | 实例对象 |
+| set       | 设置           | set(key:string, val:any, config?:Config) | void     |
+| get       | 获取           | get(key:string, config?:Config)          | any      |
+| has       | 判断           | has(key:string, config?:Config)          | boolean  |
+| del       | 删除           | del(key:string, config?:Config)          | boolean  |
+| key       | 获取 key       | key(index:number)                        | any      |
+| clear     | 清除本地数据   | clear()                                  | void     |
+| length    | 本地存储数量   |                                          | number   |
+| isSupport | 是否支持       |                                          | boolean  |
+| version   | 版本信息       |                                          | string   |
 
 ## 实例对象
 
-| 名称    | 描述     | 示例                                                       | 返回值  |
-| ------- | -------- | ---------------------------------------------------------- | ------- |
-| set     | 设置     | set(key:string, val:any, config?:Config) | void    |
-| get     | 获取     | get(key:string, config?:Config)          | any     |
-| has     | 判断     | has(key:string, config?:Config)      | boolean |
-| del     | 删除     | del(key:string, config?:Config)         | boolean |
-| key     | 获取 key     | key(index:number)         | any |
-| clear     | 清除本地数据     | clear()  | void |
-| length     | 本地存储数量     |   | number |
-| isSupport     | 是否支持     |  | boolean |
-| version | 版本信息 |                                                            | string  |
+| 名称      | 描述         | 示例                                     | 返回值  |
+| --------- | ------------ | ---------------------------------------- | ------- |
+| set       | 设置         | set(key:string, val:any, config?:Config) | void    |
+| get       | 获取         | get(key:string, config?:Config)          | any     |
+| has       | 判断         | has(key:string, config?:Config)          | boolean |
+| del       | 删除         | del(key:string, config?:Config)          | boolean |
+| key       | 获取 key     | key(index:number)                        | any     |
+| clear     | 清除本地数据 | clear()                                  | void    |
+| length    | 本地存储数量 |                                          | number  |
+| isSupport | 是否支持     |                                          | boolean |
+| version   | 版本信息     |                                          | string  |
 
 ## Config
 
@@ -117,7 +108,3 @@ interface IMiniLocalStorage {
 }
 // 将 types/xxx.d.ts 加入到 tsconfig.json includes 中即可获得自定义类型提示功能
 ```
-
-## License
-
-MIT
