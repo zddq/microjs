@@ -73,7 +73,7 @@ interface IStatic<MCD extends IMiniCookieData, CTX> {
    * @param config 配置
    * @return MiniCookie 实例
    */
-  create(config?: IConfig<CTX>): Omit<MiniCookie.Static, "create">
+  create(config?: IConfig<CTX>): Omit<IStatic<MCD, CTX>, "create">
   /**
    * cookie 获取
    * @param key 键
