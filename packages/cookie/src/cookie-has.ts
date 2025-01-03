@@ -6,7 +6,7 @@ import parse from './cookie-parse'
  * @param config 配置
  * @returns boolean
  */
-export default function (key: any, config: MiniCookie.Config = {}) {
+export default function (key: any, config: IConfig = {}) {
   try {
     if (typeof window !== "undefined") {
       return !!parse(document.cookie)[key];

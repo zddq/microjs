@@ -41,7 +41,7 @@ MiniCookie.set('cookieName', 'cookieValue')
 console.log(MiniCookie.get('cookieName'))
 
 // UMD xxx.html 普通 script 直接导入 -> 访问全局变量 MiniCookie
-<script src="https://unpkg.com/@minisss/cookie@0.0.6"></script>;
+<script src="https://unpkg.com/@minisss/cookie@0.0.1-alpha.2"></script>;
 <script>
   console.log("MiniCookie 包对象: ", MiniCookie)
   MiniCookie.set('cookieName', 'cookieValue')
@@ -51,7 +51,7 @@ console.log(MiniCookie.get('cookieName'))
 
 // script type module 模块化内部引入方式
 <script type="module">
-  import MiniCookie from "https://unpkg.com/@minisss/cookie@0.0.6/dist/index.esm.js";
+  import MiniCookie from "https://unpkg.com/@minisss/cookie@0.0.1-alpha.2/dist/index.esm.js";
   console.log("MiniCookie 包对象: ", MiniCookie)
   MiniCookie.set('cookieName', 'cookieValue')
   console.log(MiniCookie.get('cookieName'))
@@ -61,18 +61,20 @@ console.log(MiniCookie.get('cookieName'))
 </script>
 ```
 
-## miniCookie 方法 - API
+## API
 
-| 方法名    | 描述                                 | 参数                                                 | 返回值            |
-| --------- | ------------------------------------ | ---------------------------------------------------- | ----------------- |
-| get       | 获取 Cookie                          | get(key:string, opts:IMiniCookieOpts)                | any               |
-| set       | 设置 Cookie                          | set(key:string, value:any, opts:IMiniCookieOpts)     | boolean           |
-| has       | 判断 Cookie 是否存在                 | has(key:string, opts:IMiniCookieOpts)                | boolean           |
-| del       | 删除 Cookie                          | del(key:string, opts:IMiniCookieOpts)                | boolean           |
-| parse     | 解析 Cookie 字符串 IMiniCookieObject | parse(cookie:string)                                 | IMiniCookieObject |
-| serialize | 序列化 Cookie 对象                   | serialize(key:string, val:any, opts:IMiniCookieOpts) | string            |
+| 方法名    | 描述             | 参数                        | 返回值          |
+| --------- | ---------------- | --------------------------- | --------------- |
+| create    | 创建 cookie 实例 | create(config)              | 实例            |
+| get       | 获取             | get(key, config)            | any             |
+| set       | 设置             | set(key, config)            | boolean         |
+| del       | 删除             | del(key, config)            | boolean         |
+| has       | 判断是否存在     | has (key, config)           | boolean         |
+| serialize | 序列化           | serialize(key, val, config) | string          |
+| parse     | 解析             | parse(cookieStr)            | IMiniCookieData |
+| version   | 版本号           | MC.version                  | string          |
 
-## IMiniCookieOpts 类型参数
+## Config
 
 | 属性 | 类型 | 描述 | 默认值 |
 | --- | --- | --- | --- |
@@ -85,15 +87,15 @@ console.log(MiniCookie.get('cookieName'))
 | sameSite | "Strict", "Lax", "None" | 允许的跨域请求<br>Strict - 只允许同源的请求访问 <br>Lax - 允许跨域的请求访问 <br>None - 会在所有请求中发送，但需要同时设置Secure属性 | 空 |
 | partitioned | boolean | 是否开启分区 | false |
 | priority | "High", "Medium", "Low" | 浏览器保留优先级权重<br> High - 高保留权重 <br> Medium - 中等保留权重 <br> Low - 低保留权重 <br> 当Cookie达存储上限时低保留权重会被优先清除 | "Medium" |
-| ctx | Nextjs.GetServerSidePropsContext | nextjs 服务端获取及设置 cookie >=0.0.8 版本支持 | undefined |
+| ctx | Nextjs.GetServerSidePropsContext | nextjs 服务端 cookie 获取及设置 | undefined |
 
-## 覆写 ICookieData 获得自定义 TS 类型提示(可选)
+## 覆写 IMiniCookieData 获得自定义 TS 类型提示(可选)
 
 ```js
-// 覆写 ICookieData 类型接口已获得类型提示
-// 例如: 在 type/xxx.d.ts | global.d.ts 中定义 ICookieData 类型接口
+// 覆写 IMiniCookieData 类型接口已获得类型提示
+// 例如: 在 type/xxx.d.ts | global.d.ts 中定义 IMiniCookieData 类型接口
 declare namespace MiniCookie {
-  interface ICookieData {
+  interface IMiniCookieData {
     name:string
     age:number
   }

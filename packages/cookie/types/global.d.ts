@@ -73,14 +73,14 @@ interface IStatic<MCD extends IMiniCookieData, CTX> {
    * @param config 配置
    * @return MiniCookie 实例
    */
-  create(config?: MiniCookie.Config<CTX>): Omit<MiniCookie.Static, "create">
+  create(config?: IConfig<CTX>): Omit<MiniCookie.Static, "create">
   /**
    * cookie 获取
    * @param key 键
    * @param config 配置
    * @returns 对应键值
    */
-  get<K extends keyof MCD>(key: K, config?: MiniCookie.Config<CTX>): MCD[K]
+  get<K extends keyof MCD>(key: K, config?: IConfig<CTX>): MCD[K]
   /**
    * cookie 设置
    * @param key 键
@@ -88,21 +88,21 @@ interface IStatic<MCD extends IMiniCookieData, CTX> {
    * @param config 配置
    * @returns boolean
    */
-  set<K extends keyof MCD, V extends MCD[K]>(key: K, val: V, config?: MiniCookie.Config<CTX>): boolean
+  set<K extends keyof MCD, V extends MCD[K]>(key: K, val: V, config?: IConfig<CTX>): boolean
   /**
    * cookie 删除
    * @param key 键
    * @param config 配置
    * @returns boolean
    */
-  del<K extends keyof MCD>(key: K, config?: MiniCookie.Config<CTX>): boolean
+  del<K extends keyof MCD>(key: K, config?: IConfig<CTX>): boolean
   /**
    * cookie 是否存在
    * @param key 键
    * @param config 配置
    * @returns boolean
    */
-  has<K extends keyof MCD>(key: K, config?: MiniCookie.Config<CTX>): boolean
+  has<K extends keyof MCD>(key: K, config?: IConfig<CTX>): boolean
   /**
    * cookie 序列化
    * @param key 键
@@ -110,7 +110,7 @@ interface IStatic<MCD extends IMiniCookieData, CTX> {
    * @param config 配置
    * @returns string
    */
-  serialize(key: string, val: any, config?: MiniCookie.Config<CTX>): string
+  serialize(key: string, val: any, config?: IConfig<CTX>): string
   /**
    * cookie 反序列化
    * @param cookieStr cookie字符串

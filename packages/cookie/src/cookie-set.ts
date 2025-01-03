@@ -7,7 +7,7 @@ import serialize from './cookie-serialize'
  * @param config 配置
  * @returns boolean
  */
-export default function (key: any, val: any, config: MiniCookie.Config = {}) {
+export default function (key: any, val: any, config: IConfig = {}) {
   try {
     if (typeof window !== "undefined" && config.httpOnly) {
       throw new Error("Can not set a httpOnly cookie in the browser.");

@@ -6,6 +6,6 @@ import set from './cookie-set'
  * @param config 配置
  * @returns boolean
  */
-export default function (key: any, config: MiniCookie.Config = {}) {
+export default function (key: any, config: IConfig = {}) {
   return set(key, "", { ...config, maxAge: -1 })
 }
