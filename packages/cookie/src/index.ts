@@ -12,8 +12,8 @@ import PKG from 'package.json'
  */
 class MCookie<MCD extends IMiniCookieData> {
   version = PKG.version;
-  private config: Partial<MiniCookie.Config> = {};
-  constructor(config: MiniCookie.Config = {}) {
+  private config: Partial<IConfig> = {};
+  constructor(config: IConfig = {}) {
     this.config = config;
   }
   /**
@@ -22,7 +22,7 @@ class MCookie<MCD extends IMiniCookieData> {
    * @param config 配置
    * @return {MCD[K]} 对应键值
    */
-  get<K extends keyof MCD>(key: K, config: MiniCookie.Config = {}): MCD[K] {
+  get<K extends keyof MCD>(key: K, config: IConfig = {}): MCD[K] {
     return get(key, { ...this.config, ...config })
   }
   /**
@@ -32,7 +32,7 @@ class MCookie<MCD extends IMiniCookieData> {
    * @param config 配置
    * @return boolean
    */
-  set<K extends keyof MCD, V extends MCD[K]>(key: K, val: V, config: MiniCookie.Config = {}): boolean {
+  set<K extends keyof MCD, V extends MCD[K]>(key: K, val: V, config: IConfig = {}): boolean {
     return set(key, val, { ...this.config, ...config })
   }
   /**
@@ -41,7 +41,7 @@ class MCookie<MCD extends IMiniCookieData> {
    * @param config 配置
    * @returns boolean
    */
-  del<K extends keyof MCD>(key: K, config: MiniCookie.Config = {}) {
+  del<K extends keyof MCD>(key: K, config: IConfig = {}) {
     return del(key, { ...this.config, ...config, maxAge: -1 })
   }
   /**
@@ -49,7 +49,7 @@ class MCookie<MCD extends IMiniCookieData> {
    * @param key 键值
    * @param config 配置
    */
-  has<K extends keyof MCD>(key: K, config: MiniCookie.Config = {}) {
+  has<K extends keyof MCD>(key: K, config: IConfig = {}) {
     return has(key, { ...this.config, ...config })
   }
   /**
@@ -59,7 +59,7 @@ class MCookie<MCD extends IMiniCookieData> {
    * @param config 配置
    * @returns string
    */
-  serialize(key: string, val: any, config: MiniCookie.Config = {}): string {
+  serialize(key: string, val: any, config: IConfig = {}): string {
     return serialize(key, val, { ...this.config, ...config });
   }
   /**
@@ -73,7 +73,7 @@ class MCookie<MCD extends IMiniCookieData> {
 }
 
 export default {
-  create: (config: MiniCookie.Config = {}) => new MCookie(config),
+  create: (config: IConfig = {}) => new MCookie(config),
   get,
   set,
   del,

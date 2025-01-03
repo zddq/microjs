@@ -1,6 +1,6 @@
-# mini-cookie
+# @minisss/cookie
 
-mini-cookie 是一个轻量级的 JavaScript 库，旨在简化对浏览器 Document.cookie 的操作。它提供了一组简单易用的 API，允许开发者轻松地读取、设置和删除 cookie，而无需直接处理复杂的字符串操作。
+@minisss/cookie 是一个轻量级的 JavaScript 库，旨在简化对浏览器 Document.cookie 的操作。它提供了一组简单易用的 API，允许开发者轻松地读取、设置和删除 cookie，而无需直接处理复杂的字符串操作。
 
 - 😄 无依赖包 - No Dependency
 - 🤡 支持广泛浏览器 - Support Extensive Browser
@@ -8,40 +8,40 @@ mini-cookie 是一个轻量级的 JavaScript 库，旨在简化对浏览器 Docu
 - ✅ 支持 CJS - Support CJS
 - ✅ 支持 UMD - Support UMD
 - ✅ 本身内置 TS 类型提示, 无需下载额外 @types 类型提示包 TS - Support TS
-- ✅ >=0.0.8 支持 SSR Nextjs cookie - Support SSR Nextjs cookie
+- ✅ 支持 SSR Nextjs cookie - Support SSR Nextjs cookie
 - 👉 可自定义 Cookie TS 类型提示(重写模块 ICookieData 类型定义即可) - Support Custom TS
 
 ## 安装方式 - Installation
 
 ```bash
 # pnpm
-pnpm i mini-cookie
+pnpm i @minisss/cookie
 
 # yarn
-yarn add mini-cookie
+yarn add @minisss/cookie
 
 # npm
-npm i mini-cookie
+npm i @minisss/cookie
 
 # bun
-bun install mini-cookie
+bun install @minisss/cookie
 ```
 
 ## 使用方式 - Usage
 
 ```js
 // ESM xxx.js
-import MiniCookie from 'mini-cookie';
+import MiniCookie from '@minisss/cookie';
 MiniCookie.set('cookieName', 'cookieValue')
 console.log(MiniCookie.get('cookieName'))
 
 // CJS xxx.js
-const MiniCookie = require('mini-cookie');
+const MiniCookie = require('@minisss/cookie');
 MiniCookie.set('cookieName', 'cookieValue')
 console.log(MiniCookie.get('cookieName'))
 
 // UMD xxx.html 普通 script 直接导入 -> 访问全局变量 MiniCookie
-<script src="https://unpkg.com/mini-cookie@0.0.6"></script>;
+<script src="https://unpkg.com/@minisss/cookie@0.0.6"></script>;
 <script>
   console.log("MiniCookie 包对象: ", MiniCookie)
   MiniCookie.set('cookieName', 'cookieValue')
@@ -51,7 +51,7 @@ console.log(MiniCookie.get('cookieName'))
 
 // script type module 模块化内部引入方式
 <script type="module">
-  import MiniCookie from "https://unpkg.com/mini-cookie@0.0.6/dist/index.esm.js";
+  import MiniCookie from "https://unpkg.com/@minisss/cookie@0.0.6/dist/index.esm.js";
   console.log("MiniCookie 包对象: ", MiniCookie)
   MiniCookie.set('cookieName', 'cookieValue')
   console.log(MiniCookie.get('cookieName'))

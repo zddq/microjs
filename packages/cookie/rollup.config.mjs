@@ -27,7 +27,12 @@ const config = {
       browserslistConfigFile: true,
       presets: [["@babel/preset-env", { targets: { ie: "11" } }]],
     }),
-    terser(),
+    terser({
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    }),
   ],
 };
 
