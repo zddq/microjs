@@ -120,7 +120,7 @@ interface IStatic<MCD extends IMiniCookieData, CTX> {
   /**
    * 当前版本号
    */
-  version: string
+  VERSION: string
 }
 
 

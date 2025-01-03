@@ -4,14 +4,14 @@ import get from './cookie-get'
 import set from './cookie-set'
 import del from './cookie-del'
 import has from './cookie-has'
-import PKG from 'package.json'
+import PKG from '../package.json'
 
 /**
  * @name cookie-操作类
- * @param initConf 初始化配置
+ * @param config 配置
  */
 class MCookie<MCD extends IMiniCookieData> {
-  version = PKG.version;
+  VERSION = PKG.version;
   private config: Partial<IConfig> = {};
   constructor(config: IConfig = {}) {
     this.config = config;
@@ -80,5 +80,5 @@ export default {
   has,
   serialize,
   parse,
-  version: PKG.version,
+  VERSION: PKG.version,
 }
