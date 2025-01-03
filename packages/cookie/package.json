@@ -1,6 +1,6 @@
 {
   "name": "@minisss/cookie",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.1",
   "description": "A Document.cookie Manager Lib",
   "keywords": [
     "@minisss/cookie",
@@ -17,11 +17,11 @@
   "main": "dist/index.cjs.js",
   "unpkg": "dist/index.umd.js",
   "types": "types/index.d.ts",
-  "homepage": "https://github.com/zddq/microjs/tree/main/packages/mini-cookie/#README",
+  "homepage": "https://github.com/zddq/microjs/tree/main/packages/cookie/#README",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zddq/microjs.git",
-    "directory": "packages/mini-cookie"
+    "directory": "packages/cookie"
   },
   "bugs": {
     "url": "https://github.com/zddq/microjs/issues",
@@ -30,9 +30,10 @@
   "author": "minisss",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c rollup.config.mjs"
+    "w": "rollup -c rollup.config.mjs --watch",
+    "b": "rollup -c rollup.config.mjs"
   },
   "devDependencies": {
-    "next": "^15.1.0"
+    "next": "^15.1.3"
   }
 }

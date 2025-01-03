@@ -14,7 +14,7 @@ const config = {
   output: [
     { format: "esm", file: "dist/index.esm.js" },
     { format: "cjs", file: "dist/index.cjs.js" },
-    { format: "umd", file: "dist/index.umd.js", name: "MiniCookie" },
+    { format: "umd", file: "dist/index.umd.js", name: "miniCookie" },
   ],
   plugins: [
     del({ targets: ["dist/*"] }),

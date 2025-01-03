@@ -1,3 +1,5 @@
+///<reference types="./global.d.ts" />
+
 import type { GetServerSidePropsContext } from "next";
 
 declare namespace MiniCookie {
@@ -67,12 +69,67 @@ declare namespace MiniCookie {
     ctx?: GetServerSidePropsContext;
   }
 
-  interface Static {}
+  interface Static<MCD extends IMiniCookieData> {
+    /**
+     * 创建一个 MiniCookie 实例
+     * @param config 配置
+     * @return MiniCookie 实例
+     */
+    create(config?: MiniCookie.Config): Omit<MiniCookie.Static, "create">
+    /**
+     * cookie 获取
+     * @param key 键
+     * @param config 配置
+     * @returns 对应键值
+     */
+    get<K extends keyof MCD>(key: K, config?: MiniCookie.Config): MCD[K]
+    /**
+     * cookie 设置
+     * @param key 键
+     * @param val 值
+     * @param config 配置
+     * @returns boolean
+     */
+    set<K extends keyof MCD, V extends MCD[K]>(key: K, val: V, config?: MiniCookie.Config): boolean
+    /**
+     * cookie 删除
+     * @param key 键
+     * @param config 配置
+     * @returns boolean
+     */
+    del<K extends keyof MCD>(key: K, config?: MiniCookie.Config): boolean
+    /**
+     * cookie 是否存在
+     * @param key 键
+     * @param config 配置
+     * @returns boolean
+     */
+    has<K extends keyof MCD>(key: K, config?: MiniCookie.Config): boolean
+    /**
+     * cookie 序列化
+     * @param key 键
+     * @param val 值
+     * @param config 配置
+     * @returns string
+     */
+    serialize(key: string, val: any, config?: MiniCookie.Config): string
+    /**
+     * cookie 反序列化
+     * @param cookieStr cookie字符串
+     * @returns Object
+     */
+    parse<O extends MCD>(cookieStr: string): O
+    /**
+     * 当前版本号
+     */
+    version: string
+  }
 }
 
 /**
  * 浏览器/SSR-nextjs cookie 操作
  */
 declare const MiniCookie: MiniCookie.Static;
-export = MiniCookie;
 export as namespace MiniCookie;
+export = MiniCookie;
+export default MiniCookie

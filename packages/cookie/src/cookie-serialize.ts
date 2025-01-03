@@ -10,6 +10,7 @@ function isDate(val: any) {
  * @param key 键值
  * @param val 数据值
  * @param config 配置
+ * @returns string
  */
 export default function (key: string, val: any, config: MiniCookie.Config = {}): string {
   const opt = config || {};
