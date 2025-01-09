@@ -1,4 +1,4 @@
-import serialize from './cookie-serialize'
+import serialize from "./cookie-serialize";
 
 /**
  * cookie 设置
@@ -9,20 +9,21 @@ import serialize from './cookie-serialize'
  */
 export default function (key: any, val: any, config: IConfig = {}) {
   try {
-    if (typeof window !== "undefined" && config.httpOnly) {
-      throw new Error("Can not set a httpOnly cookie in the browser.");
-    }
-
     const setCookieStr = serialize(String(key), val, config);
-    if (typeof window !== "undefined") {
-      document.cookie = setCookieStr;
+
+    // SSR Next.js
+    if (typeof window === "undefined") {
+      if (!config.ctx) return false;
+
+      config.ctx.res.setHeader("'Set-Cookie'", setCookieStr);
       return true;
     }
 
-    if (!config.ctx) return false;
+    if (config.httpOnly) {
+      throw new Error("Can not set a httpOnly cookie in the browser.");
+    }
 
-    // SSR Next.js
-    config.ctx.res.setHeader("'Set-Cookie'", setCookieStr);
+    document.cookie = setCookieStr;
     return true;
   } catch (err) {
     console.error("cookie set err:", err);

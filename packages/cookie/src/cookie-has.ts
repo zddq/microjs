@@ -1,4 +1,4 @@
-import parse from './cookie-parse'
+import parse from "./cookie-parse";
 
 /**
  * cookie 是否存在
@@ -8,12 +8,15 @@ import parse from './cookie-parse'
  */
 export default function (key: any, config: IConfig = {}) {
   try {
-    if (typeof window !== "undefined") {
-      return !!parse(document.cookie)[key];
+    // SSR Next.js
+    if (typeof window === "undefined") {
+      if (!config.ctx) {
+        return false;
+      }
+      return !!parse(config.ctx!.req.headers.cookie || "")[key];
     }
 
-    // SSR Next.js
-    return !!parse(config.ctx!.req.headers.cookie || "")[key];
+    return !!parse(document.cookie)[key];
   } catch (err) {
     console.error("cookie has err:", err);
     return false;
