@@ -1,6 +1,6 @@
 {
   "name": "@minisss/reset-css",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "根据 MDN 的 HTML 元素标签规范，对标签样式进行重置，以确保在各个浏览器中实现一致的显示效果。",
   "keywords": [
     "@minisss/reset-css",

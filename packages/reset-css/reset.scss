@@ -11,6 +11,7 @@ body {
 
   color: rgba(0, 0, 0, 0.85);
   font-size: 14px;
+  font-weight: 400;
 }
 
 // 元数据
@@ -48,6 +49,7 @@ slot,template {
 
   color: inherit;
   font-size: inherit;
+  font-weight: 400;
 }
 
 span {
