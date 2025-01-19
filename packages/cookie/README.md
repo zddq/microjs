@@ -2,16 +2,15 @@
 
 @minisss/cookie 是一个轻量级的 JavaScript 库，旨在简化对浏览器 Document.cookie 的操作。它提供了一组简单易用的 API，允许开发者轻松地读取、设置和删除 cookie，而无需直接处理复杂的字符串操作。
 
-- 😄 无依赖包 - No Dependency
-- 🤡 支持广泛浏览器 - Support Extensive Browser
-- ✅ 支持 ESM - Support ESM
-- ✅ 支持 CJS - Support CJS
-- ✅ 支持 UMD - Support UMD
-- ✅ 本身内置 TS 类型提示, 无需下载额外 @types 类型提示包 TS - Support TS
-- ✅ 支持 SSR Nextjs cookie - Support SSR Nextjs cookie
-- 👉 可自定义 Cookie TS 类型提示(重写模块 ICookieData 类型定义即可) - Support Custom TS
+## 特性
 
-## 安装方式 - Installation
+- ✅ 支持 Nextjs SSR cookie 操作(传入 ctx 上下文即可)
+- ✅ 内置 TS 类型提示, 重写 IMiniCookieData 获得自定义 TS 类型提示
+- ✅ 支持 ESM CJS UMD
+- 🤡 支持广泛浏览器
+- 😄 无依赖包
+
+## 安装方式
 
 ```bash
 # pnpm
@@ -27,19 +26,28 @@ npm i @minisss/cookie
 bun install @minisss/cookie
 ```
 
-## 使用方式 - Usage
+## 使用方式
+
+### ESM xxx.js
 
 ```js
-// ESM xxx.js
-import MiniCookie from '@minisss/cookie';
-MiniCookie.set('cookieName', 'cookieValue')
-console.log(MiniCookie.get('cookieName'))
+import MiniCookie from "@minisss/cookie";
+MiniCookie.set("cookieName", "cookieValue");
+console.log(MiniCookie.get("cookieName"));
+```
 
+### CJS xxx.js
+
+```js
 // CJS xxx.js
-const MiniCookie = require('@minisss/cookie');
-MiniCookie.set('cookieName', 'cookieValue')
-console.log(MiniCookie.get('cookieName'))
+const MiniCookie = require("@minisss/cookie");
+MiniCookie.set("cookieName", "cookieValue");
+console.log(MiniCookie.get("cookieName"));
+```
 
+### UMD xxx.html
+
+```js
 // UMD xxx.html 普通 script 直接导入 -> 访问全局变量 MiniCookie
 <script src="https://unpkg.com/@minisss/cookie@0.0.1-alpha.2"></script>;
 <script>
