@@ -32,9 +32,8 @@ export default function (key: string, val: any, config: IConfig = {}): string {
     str += `; Domain=${opt.domain}`;
   }
 
-  const tmpPath = opt.path || "/";
-  if (tmpPath) {
-    if (!RE_specialContent.test(tmpPath)) {
+  if (opt.path) {
+    if (!RE_specialContent.test(opt.path)) {
       throw new TypeError("option path is invalid");
     }
     str += `; Path=${opt.path}`;
