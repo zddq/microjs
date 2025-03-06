@@ -94,7 +94,7 @@ console.log(MiniCookie.get("cookieName"));
 | secure | boolean | 是否只允许 HTTPS 请求访问 | false |
 | sameSite | "Strict", "Lax", "None" | 允许的跨域请求<br>Strict - 只允许同源的请求访问 <br>Lax - 允许跨域的请求访问 <br>None - 会在所有请求中发送，但需要同时设置Secure属性 | 空 |
 | partitioned | boolean | 是否开启分区 | false |
-| priority | "High", "Medium", "Low" | 浏览器保留优先级权重<br> High - 高保留权重 <br> Medium - 中等保留权重 <br> Low - 低保留权重 <br> 当Cookie达存储上限时低保留权重会被优先清除 | "Medium" |
+| priority | "High", "Medium", "Low" | 浏览器保留优先级权重<br> High - 高保留 <br> Medium - 中等保留 <br> Low - 低保留 <br> 当Cookie达存储上限时低保留权重会被优先清除 | "Medium" |
 | ctx | Nextjs.GetServerSidePropsContext | nextjs 服务端 cookie 获取及设置 | undefined |
 
 ## 覆写 IMiniCookieData 获得自定义 TS 类型提示(可选)

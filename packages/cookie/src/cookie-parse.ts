@@ -9,9 +9,9 @@ export default function (cookieStr: string) {
 
     const cookieItemArr = tryDecode(cookieStr).split(";").filter(Boolean);
     const cookieKVArr = cookieItemArr.map(kvStr => kvStr.split("="));
-    return cookieKVArr.reduce((tmpObj: any, [key, val = ""]) => {
+    return cookieKVArr.reduce((tmpObj: any, [key, ...valsArr]) => {
       const tmpKey = key.trim();
-      const tmpVal = val.trim();
+      const tmpVal = valsArr.map(it => it.trim()).join("=");
       try {
         return { ...tmpObj, [tmpKey]: JSON.parse(tmpVal) };
       } catch {
