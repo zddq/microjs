@@ -73,6 +73,7 @@ class MCookie<MCD extends IMiniCookieData> {
 }
 
 export default {
+  VERSION: PKG.version,
   create: (config: IConfig = {}) => new MCookie(config),
   get,
   set,
@@ -80,5 +81,4 @@ export default {
   has,
   serialize,
   parse,
-  VERSION: PKG.version,
 }
